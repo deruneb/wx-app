@@ -1,0 +1,18 @@
+<!--pages/save-content/save-content.wxml-->
+<view>
+  <!-- 保存图片 -->
+  <view class="flex flex-column justify-center align-items-center cont-box">
+    <image class="imgSize" src="{{imgUrl}}"></image>
+    <text catchtap="saveImg" data-imgsrc="{{imgUrl}}">点击保存</text>
+  </view>
+  <!-- 复制文字 -->
+  <view class="flex flex-column justify-center align-items-center cont-box">
+    <view>{{textCont}}</view>
+    <text catchtap="copyText" data-text="{{textCont}}">点击复制</text>
+  </view>
+  <!-- 拨号 -->
+  <view class="flex flex-column justify-center align-items-center cont-box">
+    <view>{{phoneCont}}</view>
+    <text catchtap="dialNumber" data-phone="{{phoneCont}}">点击拨号</text>
+  </view>
+</view>

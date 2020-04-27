@@ -1,0 +1,31 @@
+<!--pages/multiple-upload/multiple-upload.wxml-->
+<view>
+	<view class="company-out-box">
+    <view wx:for="{{enterpriseInfo}}" wx:for-index="index" wx:key="index" class="com-li-box">
+      <view class="com-li-top">
+        <input class="com-li-input" maxlength="20" name="title" bindinput="enterpriseInput" data-index="{{index}}" value="{{item.title}}" placeholder-class="text-color" placeholder="请输入标题"></input>
+        <image catchtap="removeModule" data-index="{{index}}" class="com-li-remove" src="../../images/cp-remove.png"></image>
+        <image catchtap="upModule" data-index="{{index}}" class="com-li-turn" src="../../images/cp-turnup.png"></image>
+        <image catchtap="downModule" data-index="{{index}}" class="com-li-turn" src="../../images/cp-turndown.png"></image>
+      </view>
+      <view class="com-li-bottom">
+        <view class="li-bot-top">
+          <image bindtap="uploadImg" data-index="{{index}}" data-indexs="all" class="li-bot-top-img" src="../../images/cp-picture.png"></image>
+        </view>
+        <view class="li-bot-textarea">
+          <textarea class="li-bot-input" maxlength="-1" name="intrduce" data-index="{{index}}" bindinput="enterpriseTextareaInput" value="{{item.introduce}}" auto-height placeholder-class="text-color" placeholder="请输入" />
+        </view>
+        <view wx:if="{{item.imgs.length > 0}}" class="li-bot-imgs">
+          <view wx:for="{{item.imgs}}" wx:for-item="imgs" wx:for-index="indexs" wx:key="indexs" class="li-img-box">
+            <image mode="widthFix" class="li-bot-img" src="{{imgs.url}}"></image>
+            <view class="li-img-mask">
+              <view catchtap="uploadImg" data-index="{{index}}" data-indexs="{{indexs}}" class="picset">更换</view>
+              <view catchtap="deleteImg" data-index="{{index}}" data-indexs="{{indexs}}" class="picset">删除</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view catchtap="addModule" class="add-module"> + 添加 </view>
+  </view> 
+</view>

@@ -1,0 +1,8 @@
+<view class='content_boxs'>
+  <view>
+    <text class="tips" wx:if="{{xLength > 10}}">往左滑动查看更多数据</text>
+  </view>
+  <view class='boxs_cont_info' style='width:100%; height:400rpx; margin:0 auto'>
+    <ec-canvas id="chart_{{uid}}" canvas-id="chart_{{uid}}" ec="{{ec}}" wx:if="{{!isDisposed}}"></ec-canvas>
+  </view>
+</view>

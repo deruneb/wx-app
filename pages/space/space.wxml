@@ -1,0 +1,39 @@
+<!--pages/space/space.wxml-->
+<view class="flex flex-column align-items-center echart-box">
+  <view class="echart-item">
+    <view class="title">pie图</view>
+    <view class="container" style="width:730rpx;height:100%;">
+      <charts-task-pie></charts-task-pie>
+    </view>
+  </view>
+  <view class="echart-item">
+    <view class="title">漏斗图</view>
+    <view class="container" style="width:730rpx;height:100%;">
+      <charts-marketing-funnel></charts-marketing-funnel>
+    </view>
+  </view>
+  <view class="echart-item">
+    <view class="title">时间折线图</view>
+    <view class="container" style="width:730rpx;height:100%;">
+      <charts-daily-browse-line></charts-daily-browse-line>
+    </view>
+  </view>
+  <view class="echart-item">
+    <view class="title">Zoom折线图</view>
+    <view class="container" style="width:730rpx;height:100%;">
+      <charts-forwarding-line></charts-forwarding-line>
+    </view>
+  </view>
+  <view class="echart-item">
+    <view class="title">地图排行</view>
+    <view class="container" style="width:730rpx;height:100%;">
+      <charts-map></charts-map>
+    </view>
+  </view>
+  <view class="echart-item">
+    <view class="title">关系图</view>
+    <view class="container" style="width:730rpx;height:100%;">
+      <charts-connections-graph></charts-connections-graph>
+    </view>
+  </view>
+</view>

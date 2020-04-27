@@ -1,0 +1,32 @@
+/* pages/content-folding/content-folding.wxss */
+.general-container{
+  width: 730rpx;
+  background-color: #ffffff;
+  margin: 50rpx auto 20rpx;
+  border-radius: 10rpx;
+}
+.user-introduction{
+  width: 648rpx;
+  margin: 0 auto;
+  margin-bottom: 18rpx;
+}
+.general-title{
+  height: 40rpx;
+  font-size: 30rpx;
+  color: #3C4A55;
+  line-height: 36rpx;
+  padding: 23rpx 30rpx;
+  border-bottom: 2rpx solid #DDE4EB;
+  position: relative;
+}
+.general-line{
+  display: inline-block;
+  width: 5rpx;
+  height: 36rpx;
+  background-color: #24D0C6;
+  position: absolute;
+  left: 0;
+}
+.company-introduction{
+  text-align: center;
+}

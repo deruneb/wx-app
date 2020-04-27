@@ -1,0 +1,5 @@
+<!--pages/memo/memo.wxml-->
+<view class="flex flex-column align-items-center" style="text-align:center;color:#fff;padding-top: 200rpx;">
+  <text>敬请期待 DR: wy</text>
+  <text class="tips">意见反馈QQ: 953727948</text>
+</view>

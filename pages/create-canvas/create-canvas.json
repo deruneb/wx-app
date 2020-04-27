@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "生成报表",
+  "usingComponents": {
+    "boss-report": "/components/report/report"
+  }
+}

@@ -1,0 +1,21 @@
+/* pages/space/space.wxss */
+.echart-box{
+  text-align:center;
+  color:#fff;
+  padding-bottom:100rpx;
+  overflow-x: hidden;
+}
+.echart-item{
+  width: 730rpx;
+  min-height: 440rpx;
+  margin: 20rpx auto 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.title{
+  height: 64rpx;
+  font-size: 26rpx;
+  color: #3c4a55;
+  line-height: 64rpx;
+  border-bottom: 2rpx solid #d2d3d5;
+}

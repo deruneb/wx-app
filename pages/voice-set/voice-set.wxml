@@ -1,0 +1,22 @@
+<!--pages/voice-set/voice-set.wxml-->
+<view class="container">
+  <view class="voice-add" wx:if="{{state == 1}}">
+    <view>贴近手机话筒开始录制</view>
+    <view>例：一给窝哩篙篙，呀吼~。</view>
+    <view>{{voiceTimer || ''}}</view>
+    <view class="operation-btn">
+      <button bindtap='voiceIntroduced' data-type="{{clickFlag?'1':'3'}}">{{clickFlag?'开始录音':'停止录音'}}</button>
+      <button bindtap='voiceIntroduced' data-type="2">播放录音</button>
+      <!-- <button bindtap='voiceIntroduced' data-type="3">停止录音</button> -->
+    </view>
+  </view>
+  <view class="voice-edit" wx:if="{{state == 2}}">
+    <view class="flex flex-column align-items-center">
+      <image bindtap='voiceIntroduced' data-type="{{!playState?'5':'6'}}" src="{{!playState?'../../images/icon-play.png':'../../images/icon-stopPlay.png'}}"></image>
+      <text style="color: #ffffff;">点击播放试听</text>
+    </view>
+    <view>
+      <button bindtap='voiceIntroduced' data-type="4">重录</button>
+    </view>
+  </view>
+</view>

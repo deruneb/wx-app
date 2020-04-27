@@ -1,0 +1,5 @@
+<view class="cell">
+  <view class="cell" style="width:100%;height:350rpx;">
+    <ec-canvas id="chart_{{uid}}" canvas-id="chart_{{uid}}" ec="{{ec}}" wx:if="{{!isDisposed}}"></ec-canvas>
+  </view>
+</view>

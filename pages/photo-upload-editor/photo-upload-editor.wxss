@@ -1,0 +1,30 @@
+/* pages/photo-upload-editor/photo-upload-editor.wxss */
+@import "../../utils/common.wxss";
+
+.info-photo{
+  width: 560rpx;
+  height: 560rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 21rpx;
+  position: relative;
+}
+.info-photo .replace-photo{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  background:rgba(0,0,0,.4);
+}
+.cropper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cropper-buttons {
+  color: #ffffff;
+}

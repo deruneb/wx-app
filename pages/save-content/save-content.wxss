@@ -1,0 +1,19 @@
+/* pages/save-content/save-content.wxss */
+.cont-box{
+  width: 720rpx;
+  margin: 40rpx auto;
+  border: 1rpx solid #f1f2fc;
+  border-radius: 10rpx;
+  padding: 20rpx 0rpx;
+
+}
+.cont-box text{
+  margin-top: 20rpx;
+  color: #fff;
+}
+.imgSize{
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 20rpx;
+  padding: 50rpx;
+}

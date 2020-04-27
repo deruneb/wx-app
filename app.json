@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/space/space",
+    "pages/memo/memo",
+    "pages/user/user",
+    "pages/create-qrcode/create-qrcode",
+    "pages/content-folding/content-folding",
+    "pages/photo-upload-editor/photo-upload-editor",
+    "pages/sliding-menu/sliding-menu",
+    "pages/voice-set/voice-set",
+    "pages/multiple-upload/multiple-upload",
+    "pages/create-canvas/create-canvas",
+    "pages/save-content/save-content",
+    "pages/connections-chart-force/connections-chart-force"
+  ],
+  "usingComponents": {
+    "charts-task-pie": "./components/echarts/task-pie/task-pie",
+    "charts-marketing-funnel": "./components/echarts/marketing-funnel/marketing-funnel",
+    "charts-forwarding-line": "./components/echarts/forwarding-line/forwarding-line",
+    "charts-daily-browse-line": "./components/echarts/daily-browse-line/daily-browse-line",
+    "charts-connections-graph": "./components/echarts/connections-graph/connections-graph",
+    "charts-map": "./components/echarts/map/map",
+    "ec-canvas": "./vendor/ec-canvas/ec-canvas"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#CDCDCD",
+    "selectedColor": "#24AA7D",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "功能集合",
+        "iconPath": "/images/icon-index.png",
+        "selectedIconPath": "/images/icon-index-select.png"
+      },
+      {
+        "pagePath": "pages/space/space",
+        "text": "Echarts",
+        "iconPath": "/images/icon-space.png",
+        "selectedIconPath": "/images/icon-space-select.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "/images/icon-user.png",
+        "selectedIconPath": "/images/icon-user-select.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

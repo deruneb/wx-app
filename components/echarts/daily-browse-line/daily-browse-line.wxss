@@ -1,0 +1,44 @@
+.font-22{
+  font-size: 22rpx;
+}
+.orange {
+  color: #F68411;
+}
+.green {
+  color: #24D0C6;
+}
+.blue{
+  color: #3898EC;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.content_boxs{
+  padding: 20rpx 0rpx;
+  background: #ffffff;
+  /* margin-bottom: 20rpx; */
+}
+
+.boxs_cont_info{
+  width: calc(100vw - 80rpx);
+  margin: 10rpx 40rpx;
+}
+
+.left-title-all{
+  width:calc(100vw - 45rpx );
+  height: 40rpx;
+  padding:0rpx 20rpx;
+  border-left: 5rpx solid #24D0C6;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: #3C4A55;
+}
+/* ta的浏览习惯 */
+.habit{
+  color: #3C4A55;
+  padding:0 0 19rpx 58rpx;
+  background-color: #ffffff;
+}

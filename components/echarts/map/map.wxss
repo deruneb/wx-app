@@ -1,0 +1,46 @@
+.content_boxs{
+  padding: 20rpx 0rpx;
+  background: #ffffff;
+  margin-bottom: 20rpx;
+}
+
+.boxs_cont_info{
+  width: calc(100vw - 80rpx);
+  margin: 10rpx 40rpx;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+} 
+
+.cell {
+  height: 100%;
+  background-color: #fff;
+}
+
+.rank-cell {
+  height: 100%;
+  background-color: #fff;
+  font-size: 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rank-title {
+  color: #3c4a55;
+  font-weight: 700;
+  text-align: left;
+  font-size: 22rpx;
+}
+
+.rank-list {
+  padding-left: 10rpx;
+  padding-top: 20rpx;
+  text-align: left;
+  color: #B1BFCD;
+  font-size: 20rpx;
+}

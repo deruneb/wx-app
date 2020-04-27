@@ -1,0 +1,15 @@
+/**index.wxss**/
+.container{
+  height: 100vh;
+}
+.container view{
+  width: 730rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  border: 1rpx solid #f1f2fc;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+}

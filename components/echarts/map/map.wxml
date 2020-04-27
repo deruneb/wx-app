@@ -1,0 +1,20 @@
+<view class='content_boxs'>
+  <view class='boxs_cont_info'>
+    <view style="width:660rpx; height:400rpx; margin:0 auto">
+      <view style="display:flex;">
+        <view>
+          <view style="display:flex;flex-direction:column;justify-content:center;height:100%;">
+            <view class="rank-title"> 访问地区前5名 </view>
+            <view class="rank-list">
+              <view wx:for="{{rankList.length>5?rankList:5}}" wx:key="index" wx:for-index="index" wx:if="{{index < 5}}">{{rankList[index].name?rankList[index].name:'-'}}
+                <text wx:if="{{rankList[index].name}}">{{rankList[index].value?rankList[index].value:'-'}}</text> </view>
+            </view>
+          </view>
+        </view>
+        <view style="width:500rpx;height:400rpx;">
+          <ec-canvas id="chart_{{uid}}" canvas-id="chart_{{uid}}" ec="{{ec}}" wx:if="{{!isDisposed}}"></ec-canvas>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
