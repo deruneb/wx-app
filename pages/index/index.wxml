@@ -1,4 +1,17 @@
 <!--index.wxml-->
+<!-- 公告 -->
+<view>
+  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+    <block wx:for="{{msgList}}" wx:key="index">
+      <navigator url="/pages/index/index?title={{item.url}}" open-type="navigate">
+        <swiper-item>
+          <view class="swiper_item">{{item.title}}</view>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+</view>
+<!-- 集合 -->
 <view class="container">
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="1">基于base64创建二维码</view>
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="2">内容/图文收缩展开</view>
@@ -8,6 +21,9 @@
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="6">多图上传(宽固定高度自适应)</view>
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="7">canvas绘图(圆形头像+字体绝对居中+超出打点)</view>
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="8">复制文字保存图片(拒绝授权后重新授权)</view>
+  <view hover-class="btn-hover" bindtap="jumpPage" data-type="9">parse富文本插件编译示例</view>
+  <view hover-class="btn-hover" bindtap="jumpPage" data-type="10">地址管理(地图定点)</view>
+  <view hover-class="btn-hover" bindtap="jumpPage" data-type="11">即时通讯(websoket)</view>
   <view> (所有功能都不包含接口)持续更新中... </view>
 </view>
 <!-- {

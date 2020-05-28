@@ -1,0 +1,5 @@
+<!--pages/parse-html/parse-html.wxml-->
+<view>
+  <view>支持几乎所有html标签，兼容性很好</view>
+  <parser html="{{html}}" />
+</view>

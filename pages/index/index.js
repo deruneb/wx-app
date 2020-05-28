@@ -6,7 +6,14 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    msgList: [
+      { url: "url", title: "公告：新增集成parse第三方解析插件，巴适的板！" },
+      { url: "url", title: "公告：新增地址管理DOM效果！" },
+      { url: "url", title: "公告：新增模拟websoket实现即时通讯！" },
+      { url: "url", title: "公告：需要源码请看个人中心意见反馈！"}
+    ]
+    
   },
 
   onLoad: function () {
@@ -55,6 +62,21 @@ Page({
       case '8': //保存图片至手机 复制文字
         wx.navigateTo({
           url: '/pages/save-content/save-content',
+        })
+        break;
+      case '9': //富文本（html）编译
+        wx.navigateTo({
+          url: '/pages/parse-html/parse-html',
+        })
+        break;
+      case '10': //地图定点
+        wx.navigateTo({
+          url: '/pages/map-fixed-point/map-fixed-point',
+        })
+        break;
+      case '11': //websocket
+        wx.navigateTo({
+          url: '/pages/real-time-websocket/real-time-websocket',
         })
         break;
     }

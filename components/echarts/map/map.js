@@ -55,6 +55,9 @@ Component({
       if (this.isLoaded) {
         this.dispose();
       }
+      wx.$on('region', () => {
+        this.getRegionList();
+      })
     }
   },
 

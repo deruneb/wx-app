@@ -1,0 +1,36 @@
+<!--pages/map-fixed-point/map-fixed-point.wxml-->
+<view>
+  <view class="item" style="text-align:center;">wx.chooseLocation定位处理</view>
+  <view class="flex justify-content-between item">
+    <text>选择地区</text>
+    <text>{{ADDRESS_1_STR}}</text>
+    <text bindtap="getMapad" style="width:10%;">定位</text>
+  </view>
+  <view class=" item">
+    <text style="margin-right: 12px;">详细地址</text>
+    <text>{{detaileAddxress}}</text>
+  </view>
+  <view class="item" style="text-align:center;">wx.chooseAddress收货地址</view>
+  <view class="address address-info flex" bindtap="jumpAddress">
+      <view class="left">
+        <image src="../../images/address.png"></image>
+      </view>
+      <view class="center">
+          <view class="info-user flex">
+              <view class="user-name">{{chooseAddress.name || '姓名'}}</view>
+              <view class="user-phone">{{chooseAddress.phone || '电话'}}</view>
+              <view class="default">
+                  <view class="address">
+                      默认地址
+                  </view>
+              </view>
+          </view>
+          <view class="info-address">
+              {{chooseAddress.detailAddress || '详细地址'}}
+          </view>
+      </view>
+      <view class="right">
+          <image src="../../images/address-change.png"></image>
+      </view>
+  </view>
+</view>

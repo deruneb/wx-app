@@ -58,6 +58,9 @@ Component({
       if (this.isLoaded) {
         this.dispose();
       }
+      wx.$on('browse', () => {
+        self.getBrowseTimespanList();
+      })
     }
   },
 

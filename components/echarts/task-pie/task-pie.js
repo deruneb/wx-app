@@ -38,6 +38,10 @@ Component({
       var self = this;
       this.ecComponent = this.selectComponent(`#chart_${this.data.uid}`);
       this.init(self.data.objData);
+      wx.$on('pieData', () => {
+        this.init(self.data.objData);
+        console.log("$on")
+      })
     }
   },
 

@@ -59,6 +59,9 @@ page {
 .bold{
   font-weight: bold;
 }
+.color-gray{
+  color: #B1BFCD;
+}
 /* 按钮效果 hover-class*/
 .btn-hover{
   position: relative;
@@ -79,4 +82,14 @@ page {
   color: #fff;
   position: fixed;
   bottom: 0;
+}
+
+.place-text{
+  height:90rpx;
+  font-size: 22rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color:#fff;
+  border-bottom:1rpx solid #F7F7FF;
+  padding:30rpx 39rpx 30rpx 30rpx;
 }

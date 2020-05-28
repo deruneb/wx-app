@@ -1,11 +1,11 @@
-// pages/space/space.js
+// pages/parse-html/parse-html.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    taskDataSource: {}, //任务饼图
+    html:"<h1>我是h1</h1><p>我是P</p><span>我是span</span><div>我是div</div><div>我是图片<img src='../../images/card-email.png' /></div><p style=\"margin-left: 8px;margin-right: 8px;line-height: 1.75em;\">有朋友觉得“政治掮客”是个新名头，其实，早在2002年，《中国监察》杂志就刊发了专文详述：</p><p style=\"margin-left: 8px;margin-right: 8px;line-height: 1.75em;\">商人名叫苏洪波，人称<span style=\"color: rgb(255, 41, 65);\">“云南地下组织部长”</span>。按照他的说法，曾与包括两任云南省委书记在内的多名高官交往甚密，“白恩培请喝酒、秦光荣陪散步”一度成为家常便饭。</p>"
   },
 
   /**
@@ -19,27 +19,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let self = this;
-    // setTimeout(()=>{
-    //   self.setData({
-    //     taskDataSource: {
-    //       total: 5000,
-    //       completed: 800
-    //     },
-    //   })
-    // },100)
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.$emit('graph');
-    wx.$emit('browse');
-    wx.$emit('forward');
-    wx.$emit('region');
-    wx.$emit('funnel');
-    wx.$emit('pieData');
+
   },
 
   /**

@@ -13,7 +13,10 @@
     "pages/multiple-upload/multiple-upload",
     "pages/create-canvas/create-canvas",
     "pages/save-content/save-content",
-    "pages/connections-chart-force/connections-chart-force"
+    "pages/connections-chart-force/connections-chart-force",
+    "pages/parse-html/parse-html",
+    "pages/map-fixed-point/map-fixed-point",
+    "pages/real-time-websocket/real-time-websocket"
   ],
   "usingComponents": {
     "charts-task-pie": "./components/echarts/task-pie/task-pie",

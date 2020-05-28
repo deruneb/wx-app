@@ -62,6 +62,9 @@ Component({
       console.log("人脉图商家id", this.data.businessId)
       // setTimeout(()=>{
       this.init()
+      wx.$on('graph', () => {
+        this.init();
+      })
       // },120)
     }
   },

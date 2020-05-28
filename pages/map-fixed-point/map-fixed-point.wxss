@@ -1,0 +1,109 @@
+/* pages/map-fixed-point/map-fixed-point.wxss */
+.flex {
+  display: flex;
+}
+.item{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #000;
+  background-color: #fff;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #f1f2fc;
+}
+.item:nth-of-type(2) text:nth-of-type(1){
+  width: 20%;
+}
+.item:nth-of-type(2) text:nth-of-type(2){
+  width: 80%;
+  text-align: left;
+}
+
+.address {
+  width: 100%;
+  height: 170rpx;
+  background:rgba(255,255,255,1);
+}
+.address .left {
+  width: 90rpx;
+  height: 170rpx;
+  text-align: center;
+  margin-top: 26rpx;
+}
+
+.address .left image {
+  width: 23rpx;
+  height: 30rpx;
+}
+
+.address .center {
+  width: 570rpx;
+  height: 170rpx;
+}
+
+.address .center .info-user {
+  width: 100%;
+  height: 75rpx;
+}
+
+.address .center .info-user .user-name {
+  width: auto;
+  max-width: 195rpx;
+  height: 75rpx;
+  font-size: 28rpx;
+  line-height: 75rpx;
+  color:rgba(51,51,51,1);
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.address .center .info-user .user-phone {
+  height: 75rpx;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  line-height:75rpx;
+  color:rgba(51,51,51,1);
+}
+
+.address .center .info-user .default {
+  width: 96rpx;
+  height: 75rpx;
+  margin-left: 50rpx;
+}
+
+.address .center .info-user .default .address {
+  width: 96rpx;
+  height: 30rpx;
+  margin-top: 22rpx;
+  background:rgba(255,70,78,1);
+  border-radius: 22rpx;
+  text-align: center;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color:rgba(255,255,255,1);
+}
+
+.address .center .info-address {
+  width: 100%;
+  height: 95rpx;
+  font-size: 24rpx;
+  line-height:40rpx;
+  color:rgba(102,102,102,1);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.address .right {
+  width: 90rpx;
+  height: 170rpx;
+}
+
+.address .right image {
+  width: 15rpx;
+  height: 30rpx;
+  margin-left: 60rpx;
+  margin-top: 75rpx;
+}
+

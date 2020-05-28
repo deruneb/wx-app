@@ -82,6 +82,9 @@ Component({
       if (this.isLoaded) {
         this.dispose();
       }
+      wx.$on('funnel', () => {
+        this.getIndicatorsContData();
+      })
     }
   },
 
