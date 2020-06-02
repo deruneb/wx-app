@@ -1,0 +1,109 @@
+/* pages/real-time-websocket/real-time-websocket.wxss */
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.font-32{
+  font-size: 32rpx;
+  color: #000000;
+}
+.font-30{
+  font-size: 30rpx;
+}
+.font-22{
+  font-size: 22rpx;
+  color: #BDBDBD;
+}
+.font-26{
+  font-size: 26rpx;
+} 
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.operation-btn{
+  width: 720rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+}
+.operation-btn text{
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  font-size: 29rpx;
+}
+.operation-btn text:nth-of-type(2){
+  border-left: 1rpx solid rgba(36, 170, 125, .4);
+  border-right: 1rpx solid rgba(36, 170, 125, .4);
+}
+
+.behavior-item{
+  padding-top: 54rpx;
+  background-color: #fff;
+}
+.behavior-item image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin-right: 26rpx;
+}
+.behavior-item > view:first-child{
+  width: 90%;
+  margin-bottom: 19rpx;
+}
+.behavior-cont {
+  margin: 0 20rpx 40rpx 31rpx;
+}
+.behavior-item .radar-item-layout {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 30rpx;
+}
+.behavior-item .radar-item {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.behavior-item .head-wrap {
+  position: relative;
+  height: 80rpx;
+  padding-left: 12rpx;
+}
+.behavior-item .head-img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.behavior-item .nickname {
+  max-width: 335rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.behavior-item .item-view {
+  border-bottom: 2rpx solid #d2d3d5;
+  margin-left: 106rpx;
+  padding-bottom: 51rpx;
+  overflow: hidden;
+}
+.behavior-item .block-item {
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.behavior-item .block-item view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.behavior-item .block-item .icon-dott {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #ff5a2a;
+  margin: 10rpx 15rpx 0 0;
+}

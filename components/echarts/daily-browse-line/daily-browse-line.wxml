@@ -1,0 +1,14 @@
+<view class='content_boxs' style="height:420rpx;">
+  <view class='boxs_cont_info' style='width:90%; height:400rpx; margin:0 auto'>
+    <ec-canvas id="chart_{{uid}}" canvas-id="chart_{{uid}}" ec="{{ec}}" wx:if="{{!isDisposed}}"></ec-canvas>
+  </view>
+  <!-- TA的浏览习惯 -->
+  <view wx:if="{{userType == 'business' && where == ''}}" class="habit font-22">
+    <view><text class="green">■ </text> <text>TA阅读时间集中在{{timespan}}点左右</text></view>
+    <view><text class="orange">■ </text> <text>TA平均每个活动浏览{{avgBrowseTime}}min</text></view>
+    <view><text class="blue">■ </text> <text>TA浏览最多的是：</text></view>
+    <view style="padding-left: 22rpx;">
+      <view wx:for="{{topTasks}}" wx:key="index">top{{index+1}}: <text>{{item.taskName}}</text></view>
+    </view>
+  </view>
+</view>

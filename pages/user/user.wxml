@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" plain='true' open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="color: #fff;border-color: #fff;margin-top: 100rpx;"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text style="color:#fff">欢迎光临</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <button wx:if="{{hasUserInfo}}" plain='true' open-type="openSetting" bindopensetting="openSetting" style="color: #fff;border-color: #fff;">进入授权页</button>
+  </view>
+  <text class="tips">意见反馈QQ: 953727948 DR: wy</text>
+</view>

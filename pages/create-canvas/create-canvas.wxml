@@ -1,0 +1,22 @@
+<!--pages/create-canvas/create-canvas.wxml-->
+<view>
+  <view class="btn" catchtap="downloadImg">生成报表(组件版)</view>
+  <view class="btn" catchtap="localImg">生成报表(本页面)</view>
+  <view class="btn" catchtap="cardImg">生成名片(动态设置小程序码Logo)</view>
+</view>
+<!-- 本页面生成 -->
+<view class="body_box" wx:if="{{localFlag}}">
+  <view class="cover_box">
+    <canvas canvas-id="canvas_cover" class="canvas_cover" style="width: 750px; height: 376px;"></canvas>
+  </view>
+</view>
+<!-- 组件生成 -->
+<view wx:if="{{!!dataInfo}}">
+  <boss-report showModal="{{showModal}}" userData="{{dataInfo}}" bind:parentEvent="parentEvent"></boss-report>
+</view>
+<!-- 名片图片 -->
+<view class="body_box" wx:if="{{cardFlag}}">
+  <view class="cover_box1">
+    <canvas canvas-id="canvas_cover1" class="canvas_cover1" style="width: 720px; height: 900px;"></canvas>
+  </view>
+</view>

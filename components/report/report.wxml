@@ -1,0 +1,40 @@
+<view class='report-modal'  style="top:{{!!showModal ? '0': '-2000rpx'}}" catchtouchmove="true">
+  <view class='report-mask'></view>
+  <view class='report-container'>
+    <view id='canvas_box' class='canvas_box'>
+      <canvas canvas-id="canvas_cover" class="canvas_cover" ></canvas>
+    </view>
+    <view class='report_panel'>
+      <view class='report_row'>  
+        <text class='row_line line_left'></text>
+        <text>与TA共勉</text>
+        <text class='row_line line_right'></text>
+      </view>
+      <view class='share_option flex justify-content-between'>
+        <view class='flex_item' catchtap='downloadImg'>
+          <view>
+            <image src="/images/icon-wechat-friends.png"></image>
+          </view>
+          <text>小伙伴</text>
+        </view> 
+        <view class='flex_item' catchtap='downloadImg'>
+          <view>
+            <image src="/images/icon-wechat-moments.png"></image>
+          </view>
+          <text>朋友圈</text>
+        </view>
+      </view>
+    </view>
+    <view catchtap="closeModal" style="text-align: center;margin-top: 36rpx;">
+      <image style="width:60rpx;height:60rpx;" src="../../images/icon-refuse.png"></image>
+    </view>
+  </view>
+  <view class="footer_box">
+    <block wx:if="{{coverSaveStatus == 1}}">
+      <view>
+        <icon type="success" size="18" color="#24d0c6" style="margin-right: 6px;position: relative;top: 11rpx;" />
+        <text style='vertical-align: middle;'>图片已保存到相册，马上去分享吧</text>
+      </view>
+    </block>
+  </view>
+</view>

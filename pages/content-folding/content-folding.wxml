@@ -1,0 +1,55 @@
+<!--pages/content-folding/content-folding.wxml-->
+<view style="padding: 50rpx 0 100rpx;">
+  <!-- 内容 -->
+  <view class="user-introduce general-container">
+    <view class="general-title">
+      <text class="general-line"></text>
+      <text>内容</text>
+    </view>
+    <view>
+      <!-- 信息展示 -->
+      <view style="padding-bottom: 20rpx;">
+        <view class="user-introduction font-24">
+          <text>{{textIntroduce}}</text>
+        </view>
+        <view bindtap="anText" data-type="personal" data-text="{{textIntroduce}}" wx:if="{{personalText.length > 76}}" class="font-24" style="text-align:center;">{{!anFlag?'展开全部':'收起'}} </view>
+      </view>
+    </view>
+  </view>
+   <!-- 图文 -->
+  <view class="user-introduce general-container">
+    <view class="general-title">
+      <text class="general-line"></text>
+      <text>图文</text>
+    </view>
+    <view style="padding-bottom: 20rpx;">
+      <!-- 信息展示 -->
+      <view>
+        <block wx:if="{{businessIntro.length >= 1 && !anCompany}}">
+          <view>
+            <view class="company-introduction font-24">{{businessIntro[0].title}}</view>
+            <view class="company-introduction font-24">
+              <text>{{businessIntro[0].introduce}}</text>
+            </view>
+            <view style="text-align:center;" wx:if="{{businessIntro[0].imgs[0].url}}">
+              <image class="company-img" mode="widthFix" src="{{businessIntro[0].imgs[0].url}}"></image>
+            </view>
+          </view>
+        </block>
+        <!-- 有信息 -->
+        <block wx:for="{{businessIntro || ''}}" wx:key="item" wx:if="{{businessIntro && anCompany}}">
+          <view>
+            <view class="company-introduction font-24">{{item.title}}</view>
+            <view class="company-introduction font-24">
+              <text>{{item.introduce}}</text>
+            </view>
+            <view style="text-align:center;">
+              <image class="company-img" mode="widthFix" wx:for="{{item.imgs}}" wx:for-item='itemImg' wx:key="index" src="{{itemImg.url}}"></image>
+            </view>
+          </view>
+        </block>
+        <view bindtap="anText"  data-type="company" wx:if="{{businessIntro && businessIntro.length > 1}}" class="font-24" style="text-align:center;">{{!anCompany?'展开全部':'收起'}} </view>
+      </view>
+    </view>
+  </view>
+</view> 

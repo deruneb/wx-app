@@ -1,0 +1,18 @@
+<!--pages/photo-upload-editor/photo-upload-editor.wxml-->
+<import src='../../utils/we-cropper.wxml'/>
+<view>
+  <view wx:if="{{!flag}}" class="info-photo" style="background-image:url('{{tailoringPhoto}}')">
+    <image class="info-photo" src="{{tailoringPhoto}}"></image>
+
+    <view class="replace-photo" bindtap="switchPhoto">更换</view>
+  </view>
+  <view wx:if="{{flag}}">
+    <view class="cropper-wrapper" style="height:800rpx;">
+      <template is="we-cropper" data="{{...cropperOpt}}"/>
+      <view class="cropper-buttons">
+          <view class="upload" bindtap="uploadTap">重新上传</view>
+          <view class="getCropperImage" bindtap="getCropperImage">完成</view>
+      </view>
+    </view>
+  </view>
+</view>

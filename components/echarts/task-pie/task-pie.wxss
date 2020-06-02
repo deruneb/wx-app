@@ -1,0 +1,45 @@
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.cell {
+  height: 100%;
+  background-color: #fff;
+}
+
+.stat-cell {
+  height: 100%;
+  background-color: #fff;
+  font-size: 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.font-22{
+  font-size: 22rpx !important;
+}
+.row-text {
+  text-align: left;
+}
+
+.row-icon-completed {
+  font-size: 20rpx;
+  padding-right: 6rpx;
+  color: #69e4dd;
+}
+
+.row-icon-doing {
+  font-size: 20rpx;
+  padding-right: 6rpx;
+  color: #e3e3e3;
+}
+
+.row-value {
+  font-size: 20rpx;
+  padding-left: 6rpx;
+  color: #fa766b;
+  font-weight: 500;
+}

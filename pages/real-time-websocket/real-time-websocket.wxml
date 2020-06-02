@@ -1,0 +1,33 @@
+<!--pages/real-time-websocket/real-time-websocket.wxml-->
+<view>
+  <view class="operation-btn">
+    <text bindtap="delete">删除用户</text>
+    <text bindtap="newAdd">新增用户</text>
+    <text bindtap="newBehavior">新增行为</text>
+  </view>
+  <view class="behavior-item flex">
+    <view class="behavior-cont">
+      <view class="radar-item-layout" wx:for="{{behaviorList}}" wx:key="item">
+        <view class="radar-item" bindtap='toCustomDetail' data-item='{{item}}' data-origin="behavior">
+          <view class="head-wrap pull-left">
+            <image class="head-img" src="{{item.face || 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/miniapp/logo-reverse.png'}}"></image>
+          </view>
+          <view class="nickname fon-32 black-deep pull-left">{{item.nickname || '暂无姓名'}}</view>
+          <text class="pull-right" style='color: #bdbdbd;font-size: 22rpx;'>{{item.time || '今天'}}</text>
+        </view>
+        <view class='item-view'>
+          <view class="block-item flex" style="margin-top: 20rpx;" wx:for="{{item.userData}}" wx:for-item="behavior" wx:for-index="index1" wx:key="index1" wx:if="{{item.userData.length > 0}}">
+            <text class="icon-dott pull-left"></text>
+            <view class="font-26">{{behavior.str1}}</view>
+            <view class="font-26" style="color: #FF8C05" wx:if="{{!!behavior.str2}}">{{behavior.str2}}</view>
+            <view class="font-26" wx:if="{{!!behavior.str3}}" style="max-width:332rpx;color:#3898EC;margin-left: 8rpx;" bindtap="jumpHandler" data-item="{{item}}" data-id="{{behavior.taskId}}">{{behavior.str3}}</view>
+            <view class="font-26" wx:if="{{!!behavior.str4}}">{{behavior.str4}}</view>
+            <view class="font-26" style="color:#3898EC;margin-left: 8rpx;" bindtap="jumpHandler" data-item="{{item}}" wx:if="{{!!behavior.str5}}">{{behavior.str5}}</view>
+            <!-- <view class="font-26" style="color: #FF8C05" wx:if="{{!!behavior.str6}}">{{behavior.str6}}</view> -->
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{behaviorList.length==0}}" class='color-gray font-30 place-text' style='border:none;'>- 暂无数据 -</view>
+    </view>
+  </view>
+</view>

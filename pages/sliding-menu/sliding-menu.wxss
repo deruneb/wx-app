@@ -1,0 +1,36 @@
+/* pages/sliding-menu/sliding-menu.wxss */
+.card-detail{
+  position: relative;
+  margin-top: 50rpx;
+}
+.detail-box{
+  width: 700rpx;
+  white-space: nowrap;
+  padding: 0 25rpx;
+
+}
+.detail-box .detail-item{
+  display: inline-block;
+  width: 246rpx;
+  height: 68rpx;
+  border-radius: 10rpx;
+  margin-right: 15rpx;
+  background-color: #ffffff;
+  padding: 25rpx 16rpx 30rpx 20rpx;
+}
+.slide{
+  width:100%;
+  height:30rpx;
+  padding-top: 34rpx;
+}
+.slide .slide-bar{
+  width:160rpx;
+  margin:0 auto;
+  height:5rpx;
+  background-color:#B1BFCD;
+}
+.slide .slide-bar .slide-show{
+  height:100%;
+  background-color:#24D0C6;
+
+}

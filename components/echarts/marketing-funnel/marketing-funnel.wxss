@@ -1,0 +1,58 @@
+.content_boxs{
+  background: #ffffff;
+  margin-bottom: 20rpx;
+}
+
+.content_boxs cover-image{
+  width: 64rpx!important;
+  height: 64rpx!important;
+  vertical-align: -28rpx;
+  margin-right: 10rpx;
+}
+
+.content_info > cover-view{
+  font-size: 20rpx;
+  color: #b1bfcd;
+  position: relative;
+  display: flex;
+}
+
+.content_info > cover-view cover-view{
+  width: 190rpx;
+  line-height: 49rpx;
+  text-align: left;
+}
+
+.content_info .click-img{
+  bottom: 283rpx;
+  left: 508rpx;
+}
+
+.content_info .appointment-img{
+  bottom: 276rpx;
+  left: 453rpx;
+}
+
+.content_info .trading-img{
+  bottom: 270rpx;
+  left: 397rpx;
+}
+
+.content_info .make-img{
+  bottom: 204rpx;
+  left: 568rpx;
+}
+
+.left-title-all{
+  width:calc(100vw - 45rpx );
+  height: 40rpx;
+  padding:0rpx 20rpx;
+  border-left: 5rpx solid #24D0C6;
+  line-height: 40rpx;
+  font-size: 26rpx;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}

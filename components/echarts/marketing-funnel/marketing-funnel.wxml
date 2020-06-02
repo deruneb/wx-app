@@ -1,0 +1,25 @@
+<view class='content_boxs'>
+  <!-- 营销漏斗 -->
+  <view class="content_info" wx:if="{{where == 'marketing'}}" style="width:100%;height:350rpx; margin:30rpx 0 20rpx 0;position: relative;">
+    <ec-canvas id="chart_{{uid}}" canvas-id="chart_{{uid}}" ec="{{ec}}" wx:if="{{!isDisposed}}"></ec-canvas>
+    <cover-view class="click-img" wx:if="{{isRate}}">
+      <cover-image src="../../../images/connection.png"></cover-image>
+      <cover-view>点击率 {{clickRate}}%</cover-view>
+    </cover-view>
+    <cover-view class="appointment-img" wx:if="{{isRate}}">
+      <cover-image src="../../../images/connection.png"></cover-image>
+      <cover-view>预约转换率 {{consultRate}}%</cover-view>
+    </cover-view>
+    <cover-view class="trading-img" wx:if="{{isRate}}">
+      <cover-image src="../../../images/connection.png"></cover-image>
+      <cover-view>交易转换率 {{orderRate}}%</cover-view>
+    </cover-view>
+  </view>
+  <!-- 成交概率 -->
+  <view class="content_info" wx:if="{{where == 'make'}}" style="width:100%;height:350rpx; margin:30rpx 0 20rpx 0;position: relative;">
+    <ec-canvas id="chart_{{uid}}" canvas-id="chart_{{uid}}" ec="{{ec}}" wx:if="{{!isDisposed}}"></ec-canvas>
+    <cover-view class="make-img">
+      <cover-view style="font-size:46rpx;color:#FA766B;">{{!!funnelData[3].cont?'高':((!!funnelData[2].cont || !!funnelData[1].cont)?'中':'低')}}</cover-view>
+    </cover-view>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/sliding-menu/sliding-menu.wxml-->
+<view>
+  <view class="card-detail">
+    <scroll-view class="detail-box" scroll-x="true" scroll-with-animation="true" scroll-left='0' bindscroll="getleft">
+      <view class="detail-item">
+        菜单1
+      </view>
+      <view class="detail-item">
+        菜单2
+      </view>
+      <view class="detail-item">
+        菜单3
+      </view>
+      <view class="detail-item">
+        菜单4
+      </view>
+      <view class="detail-item">
+        菜单5
+      </view>
+    </scroll-view>
+    <view class="slide">
+      <view class='slide-bar' style="width:{{barWidth}}rpx">
+        <view class="slide-show" style="width:{{slideWidth}}rpx; margin-left:{{slideLeft<=1 ? 0 : slideLeft+'rpx'}};"></view>
+      </view>
+    </view>
+  </view>
+</view>
