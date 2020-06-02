@@ -15,7 +15,9 @@ Page({
     ]
     
   },
-
+  onShow: function () {
+    console.log('zql')
+  },
   onLoad: function () {
     wx.showTabBar();
     wx.showShareMenu();
