@@ -79,11 +79,6 @@ Page({
           url: '/pages/real-time-websocket/real-time-websocket',
         })
         break;
-      case '12': //图形验证码
-        wx.navigateTo({
-          url: '/pages/validation/validation',
-        })
-        break;
     }
   },
   onShareAppMessage: function () {

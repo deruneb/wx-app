@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "sliders": "/components/sliders/sliders",
-    "comp-slider-validation": "/components/slider-validation/slider-validation"
-  }
-}

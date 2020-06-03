@@ -1,9 +1,0 @@
-<view class="slidersBox">
-  <text>{{ hint }}</text>
-  <view class='operationBgBox' style='left: {{ -(w + 2) }}px; transform: {{ cssAnimation }}'>
-    <text>{{ succeedMsg }}</text>
-    <view class='operationBox' catchtouchmove='moveFun' catchtouchend='endFun'>
-      <image src=''></image>
-    </view>
-  </view>
-</view>

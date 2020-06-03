@@ -16,8 +16,7 @@
     "pages/connections-chart-force/connections-chart-force",
     "pages/parse-html/parse-html",
     "pages/map-fixed-point/map-fixed-point",
-    "pages/real-time-websocket/real-time-websocket",
-    "pages/validation/validation"
+    "pages/real-time-websocket/real-time-websocket"
   ],
   "usingComponents": {
     "charts-task-pie": "./components/echarts/task-pie/task-pie",
