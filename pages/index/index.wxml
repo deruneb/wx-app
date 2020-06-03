@@ -24,7 +24,7 @@
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="9">parse富文本插件编译示例</view>
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="10">地址管理(地图定点)</view>
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="11">即时通讯(websoket)</view>
-  <view hover-class="btn-hover" bindtap="jumpPage" data-type="12">图形验证码</view>
+  <view hover-class="btn-hover" bindtap="jumpPage" data-type="12">验证方式集合</view>
   <view> (所有功能都不包含接口)持续更新中... </view>
 </view>
 <!-- {
