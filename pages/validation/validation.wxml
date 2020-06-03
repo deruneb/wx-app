@@ -1,0 +1,30 @@
+<!--pages/validation/validation.wxml-->
+<view>
+  <view class="operation-btn">
+    <text bindtap="menuBtn" data-type="1">字符验证</text>
+    <text bindtap="menuBtn" data-type="2">滑动验证</text>
+    <text bindtap="menuBtn" data-type="3">图形验证</text>
+  </view>
+  <view wx:if="{{character}}">
+    <view class='member_main input_center'>
+      <view class='center_left'>
+        <input placeholder-class="phcolor" type='text' class="weui-input" maxlength="4" placeholder='请输入验证码' value='{{code}}' name="code" bindinput='bindCode' />
+      </view>
+      <view class="capture">
+        <canvas canvas-id="canvas"></canvas>
+      </view>
+      <view class="changeImg" bindtap="changeImg">换一换</view>
+    </view>
+    <view class='btn'>
+      <button catchtap='saves'>提交</button>
+    </view>
+  </view>
+
+  <view wx:if="{{sliding}}" style="margin-top:100rpx;">
+    <sliders  bindmyevent="myEventListener"></sliders>
+  </view>
+
+  <view wx:if="{{graphics}}" style="background-color:#fff;">
+    <comp-slider-validation bind:compTouchend="compTouchend" id="jigsawPuzzle"></comp-slider-validation>
+  </view>
+</view>

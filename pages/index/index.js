@@ -8,6 +8,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     msgList: [
+      { url: "url", title: "公告：新增验证方式集合！" },
       { url: "url", title: "公告：新增集成parse第三方解析插件，巴适的板！" },
       { url: "url", title: "公告：新增地址管理DOM效果！" },
       { url: "url", title: "公告：新增模拟websoket实现即时通讯！" },
@@ -77,6 +78,11 @@ Page({
       case '11': //websocket
         wx.navigateTo({
           url: '/pages/real-time-websocket/real-time-websocket',
+        })
+        break;
+      case '12': //图形验证码
+        wx.navigateTo({
+          url: '/pages/validation/validation',
         })
         break;
     }

@@ -1,0 +1,22 @@
+<view class='silderBox' bindstrockarc='strockArc' bindreload='reloadSilder' bindIsPass="isPass" style="display:{{isShow}}">
+  <!-- <image src="{{silderSrc}}" class="silderbgImg"></image> -->
+  <view class="silder_ceng" id="silderContent">
+    <canvas canvas-id="silder_img2" id="silder_img2"></canvas>
+    <canvas canvas-id="silder_ceng" id="silder_ceng"></canvas>
+  </view>
+   <view class="exm">
+      <view class="{{isPass?'right':'error'}}">
+        <text class="i-icon {{isPass?'icon-right ':'icon-delete-second'}} "  wx:if="{{isPassText!=''}}"></text>
+        <text>{{isPassText}}</text>
+      </view>
+      <view class="optionbtn">
+          <text class="i-icon icon-update" bindtap="getData"></text>
+          <text class="i-icon icon-close"  bindtap="hideSilder"></text>
+      </view>
+   </view> 
+  <view class="silder_drag">
+    <view class="moved" style="width:{{mX+20}}px"></view>
+    <view class="silder_drag_btn" bindtouchstart="touchstart" bindtouchmove="touchmove" style="left:{{mX}}px" bindtouchend="touchend"> | | | </view>
+    <view class="yan_drag_text">拖动左侧滑块完成上方拼图</view>
+  </view>
+</view>
