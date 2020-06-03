@@ -266,8 +266,8 @@ Component({
         self.data.isMatch = true;
         self.data.isPass = true;
         self.data.isPassText='验证通过';
-        // self.hideSilder();
-        self.getData();
+        self.hideSilder();
+        // self.getData();
       } else {
         self.data.isPass = false;
         self.data.isPassText = '验证失败';
