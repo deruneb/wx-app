@@ -1,0 +1,61 @@
+@import "../../utils/we-cropper/common.wxss";
+
+page {
+  height: 100%
+}
+.cropper-wrapper{
+  background-color: rgb(0,0,0);
+}
+.cropper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cropper-buttons {
+  color: #ffffff;
+}
+.replace-img{
+  width: 500rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+  bottom: 301rpx;
+
+}
+.prompt-info{
+  width: 504rpx;
+  height: 857rpx;
+  background-color: #FFFFFF;
+  margin-top: 50rpx;
+  position: absolute;
+  top: 0;
+  z-index: 99999;
+}
+.prompt-info cover-image{
+  width: 116rpx;
+  height: 97rpx;
+  margin-bottom: 39rpx;
+}
+.prompt-info cover-view{
+  color: #b1bfcd;
+}
+.share-btn{
+  position: absolute;
+  bottom: 68rpx;
+}
+/* 海报canvas */
+.body_box {
+  position: absolute;
+  top: -2000rpx;
+}
+.cover_box{
+  width: 100%;
+  height: 100%;
+}
+.canvas_cover{
+  width: 100%;
+  height: 100%;
+}

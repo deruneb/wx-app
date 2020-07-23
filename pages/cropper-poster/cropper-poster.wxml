@@ -1,0 +1,10 @@
+<import src='../../utils/we-cropper/we-cropper.wxml'/>
+<view class="cropper-wrapper">
+    <template is="we-cropper" data="{{...cropperOpt}}"/>
+    <cover-view bindtap="uploadTap" wx:if="{{uploadFlag}}" class="prompt-info flex flex-column justify-center align-items-center">
+      <cover-image src="https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/3d3ab2e3-4302-4758-86ae-7e7c6dd900cd.png"></cover-image>
+      <cover-view>点击上传本地图片</cover-view>
+    </cover-view>
+    <button class="sumbit-btn share-btn" disabled="{{shareBtnFlag}}" bindtap="getCropperImage">生成海报</button>
+    <make-poster wx:if="{{compFlag}}" posterImg="{{posterImg}}"></make-poster>
+</view>

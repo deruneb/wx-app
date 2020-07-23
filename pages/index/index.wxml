@@ -25,6 +25,8 @@
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="10">地址管理(地图定点)</view>
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="11">即时通讯(websoket)</view>
   <view hover-class="btn-hover" bindtap="jumpPage" data-type="12">验证集合</view>
+  <view hover-class="btn-hover" bindtap="jumpPage" data-type="13">we-cropper + canvas实现生成海报（适配各种机型）</view>
+    <view hover-class="btn-hover" bindtap="jumpPage" data-type="14">image-cropper自由裁剪图片</view>
   <view> (所有功能都不包含接口)持续更新中... </view>
 </view>
 <!-- {

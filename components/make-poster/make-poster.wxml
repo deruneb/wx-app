@@ -1,0 +1,9 @@
+<!--components/make-poster/make-poster.wxml-->
+<view>
+  <view class="body_box">
+    <view class="cover_box">
+      <canvas canvas-id="canvas_cover" class="canvas_cover" style="width: 250px; height: 575px;"></canvas>
+    </view>
+  </view>
+</view>
+

@@ -8,6 +8,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     msgList: [
+      { url: "url", title: "公告：新增image-cropper自由裁剪图片！" },
+      { url: "url", title: "公告：新增we-cropper + canvas实现生成海报！" },
       { url: "url", title: "公告：新增验证方式集合！" },
       { url: "url", title: "公告：新增集成parse第三方解析插件，巴适的板！" },
       { url: "url", title: "公告：新增地址管理DOM效果！" },
@@ -83,6 +85,16 @@ Page({
       case '12': //图形验证码
         wx.navigateTo({
           url: '/pages/validation/validation',
+        })
+        break;
+      case '13': //we-cropper + canvas实现生成海报
+        wx.navigateTo({
+          url: '/pages/cropper-poster/cropper-poster',
+        })
+        break;
+      case '14': //we-cropper + canvas实现生成海报
+        wx.navigateTo({
+          url: '/pages/image-cropper-demo/image-cropper-demo',
         })
         break;
     }

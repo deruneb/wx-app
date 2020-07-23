@@ -16,7 +16,9 @@
     "pages/connections-chart-force/connections-chart-force",
     "pages/parse-html/parse-html",
     "pages/map-fixed-point/map-fixed-point",
-    "pages/real-time-websocket/real-time-websocket"
+    "pages/real-time-websocket/real-time-websocket",
+    "pages/cropper-poster/cropper-poster",
+    "pages/image-cropper-demo/image-cropper-demo"
   ],
   "usingComponents": {
     "charts-task-pie": "./components/echarts/task-pie/task-pie",

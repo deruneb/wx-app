@@ -104,7 +104,10 @@ Page({
     var self = this;
     var flag = (eDetail.detail.isPass ? 2 : 1);
     if (flag == 2) { //验证成功
-
+      wx.showToast({
+        title: '验证成功了铁汁，开始后续操作吧',
+        icon: 'none'
+      })
     }
   }
 })
