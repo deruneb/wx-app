@@ -1,4 +1,5 @@
 {
+  "disableScroll": true,
   "navigationBarTitleText": "制作海报",
   "usingComponents": {
     "make-poster": "/components/make-poster/make-poster"

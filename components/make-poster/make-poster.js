@@ -128,6 +128,9 @@ Component({
     //导出画布
     saveImage() {
       let self = this;
+      let pages = getCurrentPages();
+      let prePage = pages[pages.length - 1];
+      console.log("上个页面",prePage)
       wx.createSelectorQuery().in(this).select('.canvas_cover').fields({
         size: true,
       }, (box) => {
@@ -146,18 +149,20 @@ Component({
             wx.saveImageToPhotosAlbum({
               filePath: res.tempFilePath,
               success: (res)=>{
-                self.setData({
-                  isShare: false,
-                })
                 wx.showToast({
                   title: '保存成功',
-                  icon: 'none'
+                  icon: 'none',
+                  duration: 2000
                 })
               },
               fail: (err) => {
+                prePage.setData({
+                  compFlag: false
+                })
                 wx.showToast({
                   title: '保存失败!',
-                  icon: 'none'
+                  icon: 'none',
+                  duration: 2000
                 })
               },
               complete: ()=>{

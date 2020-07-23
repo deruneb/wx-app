@@ -64,6 +64,22 @@ Page({
       success(res) {
         let src = res.tempFilePaths[0]
         self.setData({
+          posterImg: src
+        })
+        self.cropper.pushOrign(src)
+      }
+    })
+  },
+  // 更换图片
+  replaceTap() {
+    let self = this
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success(res) {
+        let src = res.tempFilePaths[0]
+        self.setData({
           originalUrl: src
         })
         self.cropper.pushOrign(src)
@@ -118,35 +134,37 @@ Page({
   // 生成图片
   getCropperImage(){
     let self = this;
+    wx.showLoading({
+      title: '生成中',
+    })
     self.cropper.getCropperImage(tempFilePath => {
       // tempFilePath 为裁剪后的图片临时路径
       console.log("裁剪地址1",tempFilePath)
 
       if (tempFilePath) {
         console.log("裁剪地址2",tempFilePath)
-        self.setData({
-          posterImg: tempFilePath,
-          compFlag: true
-        })
         // 拿到裁剪后的图片路径的操作
-        // wx.uploadFile({
-        //   url: `后台上传接口`,
-        //   filePath: tempFilePath,
-        //   name: 'file',
-        //   formData: {
-        //     'user': 'test'
-        //   },
-        //   success: function(res) {
-        //     var uploadData = JSON.parse(res.data);
-        //     //上传图片到服务器后的地址
-        //     var imgPath = uploadData.data[0].file;
-        //     self.setData({posterImg: imgPath})
-        //     // if(imgPath){
-        //     //   self.setData({shareBtnFlag: false})
-        //     // }
-        //     console.log("上传后路径",imgPath)
-        //   }
-        // })
+        wx.uploadFile({
+          url: 'http://api.kpaas.biaoxiaoxu.cn/api/assets_service/v1/assets/upload?secret_key=e00a05cf37305a22ba10fec428b4ab01&client_type=weapp',
+          filePath: tempFilePath,
+          name: 'file',
+          formData: {
+            'user': 'test'
+          },
+          success: function(res) {
+            var uploadData = JSON.parse(res.data);
+            //上传图片到服务器后的地址
+            var imgPath = uploadData.data[0].file;
+            self.setData({
+              posterImg: imgPath,
+              compFlag: true
+            })
+            // if(imgPath){
+            //   self.setData({shareBtnFlag: false})
+            // }
+            console.log("上传后路径",imgPath)
+          }
+        })
       } else {
         console.log('获取图片地址失败，请稍后重试')
       }
