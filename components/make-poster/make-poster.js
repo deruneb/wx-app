@@ -59,7 +59,7 @@ Component({
         console.log("canvasBoxcanvasBoxcanvasBox",canvasBox)
         let widthRate = canvasBox.width / 250;
         let imgUrls = [];
-        imgUrls.push(self.data.posterImg,'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/05c15fcf-a290-4e4c-8fc1-6d9d99a12b0a.jpg')
+        imgUrls.push('https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/05c15fcf-a290-4e4c-8fc1-6d9d99a12b0a.jpg')
         let name = self.data.userInfo.name,job = self.data.userInfo.job,compay = self.data.userInfo.company;
         let nameStr = name.length > 5 ? name.substring(0, 4)+'...':name,
           jobStr = job.length >10 ? job.substring(0, 9)+'...':job,
@@ -73,9 +73,9 @@ Component({
         imgUrlsFn.then((res)=>{
           console.log("本地海报",res)
           //绘制海报图片到画布
-          ctx.drawImage(res[0],0,0,canvasBox.width,widthRate*480);
+          ctx.drawImage(self.data.posterImg,0,0,canvasBox.width,widthRate*480);
           //绘制二维码
-          ctx.drawImage(res[1],160*widthRate,488*widthRate,qrcodeSize.width,qrcodeSize.height);
+          ctx.drawImage(res[0],160*widthRate,488*widthRate,qrcodeSize.width,qrcodeSize.height);
           
           //姓名电话
           ctx.setFontSize(12);
@@ -156,9 +156,6 @@ Component({
                 })
               },
               fail: (err) => {
-                prePage.setData({
-                  compFlag: false
-                })
                 wx.showToast({
                   title: '保存失败!',
                   icon: 'none',
@@ -166,6 +163,9 @@ Component({
                 })
               },
               complete: ()=>{
+                prePage.setData({
+                  compFlag: false
+                })
                 wx.hideLoading();
               }
             },self)

@@ -10,5 +10,16 @@
   <view class="usermotto">
     <button wx:if="{{hasUserInfo}}" plain='true' open-type="openSetting" bindopensetting="openSetting" style="color: #fff;border-color: #fff;">进入授权页</button>
   </view>
-  <text class="tips">意见反馈QQ: 953727948 DR: wy</text>
+  <view class="company-out-box">
+    <view class="com-li-bottom">
+      <view class="li-bot-top">
+        意见反馈（留言）
+      </view>
+      <view class="li-bot-textarea">
+        <textarea class="li-bot-input" maxlength="-1" name="intrduce" bindinput="enterpriseTextareaInput" value="{{introduce}}" auto-height placeholder-class="text-color" placeholder="请发表你的意见..." />
+      </view>
+    </view>
+    <view bindtap="addModule" class="add-module"> 提交 </view>
+  </view>
+  <text class="tips">联系QQ: 953727948 DR: wy</text>
 </view>

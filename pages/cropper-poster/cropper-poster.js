@@ -2,7 +2,6 @@ import WeCropper from '../../utils/we-cropper/we-cropper.min.js';
 const device = wx.getSystemInfoSync(), // 获取设备信息
       width = device.windowWidth,
       height = device.windowHeight;
-
 Page({
   data: {
     userInfo:{},
@@ -137,33 +136,59 @@ Page({
     wx.showLoading({
       title: '生成中',
     })
+    var ceshi = 'https://tmp/wx96d9a606d24aef3b.o6zAJs_qkr6oNHAHZ3UDDp0Onzd8.y9ml0vhBshR7e44d69dc9c4b71c7743e1427dfdaf205.png'
+    console.log("ceshi",ceshi)
     self.cropper.getCropperImage(tempFilePath => {
       // tempFilePath 为裁剪后的图片临时路径
       console.log("裁剪地址1",tempFilePath)
+      
 
       if (tempFilePath) {
         console.log("裁剪地址2",tempFilePath)
+        
         // 拿到裁剪后的图片路径的操作
-        wx.uploadFile({
-          url: 'http://api.kpaas.biaoxiaoxu.cn/api/assets_service/v1/assets/upload?secret_key=e00a05cf37305a22ba10fec428b4ab01&client_type=weapp',
+        // wx.uploadFile({
+        //   url: '后端资源api',
+        //   filePath: tempFilePath,
+        //   name: 'file',
+        //   formData: {
+        //     'user': 'test'
+        //   },
+        //   success: function(res) {
+        //     var uploadData = JSON.parse(res.data);
+        //     //上传图片到服务器后的地址
+        //     var imgPath = uploadData.data[0].file;
+        //     self.setData({
+        //       posterImg: imgPath,
+        //       compFlag: true
+        //     })
+        //     // if(imgPath){
+        //     //   self.setData({shareBtnFlag: false})
+        //     // }
+        //     console.log("上传后路径",imgPath)
+        //   }
+        // })
+        wx.cloud.uploadFile({
+          // 指定上传到的云路径
+          cloudPath: 'img' + new Date().getTime() + '.png',
+          // 指定要上传的文件的小程序临时文件路径
           filePath: tempFilePath,
-          name: 'file',
-          formData: {
-            'user': 'test'
-          },
-          success: function(res) {
-            var uploadData = JSON.parse(res.data);
-            //上传图片到服务器后的地址
-            var imgPath = uploadData.data[0].file;
-            self.setData({
-              posterImg: imgPath,
-              compFlag: true
+          success: res => {
+            wx.cloud.downloadFile({
+              fileID: res.fileID,
+              success: result=>{
+                self.setData({
+                  posterImg: result.tempFilePath,
+                  compFlag: true
+                })
+                if(result.tempFilePath){
+                  self.setData({shareBtnFlag: false})
+                }
+                console.log("下载云端图片",result.tempFilePath)
+              }
             })
-            // if(imgPath){
-            //   self.setData({shareBtnFlag: false})
-            // }
-            console.log("上传后路径",imgPath)
-          }
+            console.log('云上传成功', )
+          },
         })
       } else {
         console.log('获取图片地址失败，请稍后重试')

@@ -176,4 +176,26 @@ Page({
   end(e) {
     clearInterval(this.data[e.currentTarget.dataset.type]);
   },
+  saveImg(){
+    this.cropper.getImg((obj)=>{
+      app.globalData.imgSrc = obj.url;
+      wx.saveImageToPhotosAlbum({
+        filePath: obj.url,
+        success: (res)=>{
+          wx.showToast({
+            title: '保存成功',
+            icon: 'none',
+            duration: 2000
+          })
+        },
+        fail: (err) => {
+          wx.showToast({
+            title: '保存失败!',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
+    });
+  }
 })

@@ -20,4 +20,5 @@
   <button catchtouchstart='narrow' catchtouchend='end' data-type="narrow">缩小</button>
   <button catchtouchstart='rotate' catchtouchend='end' data-type="rotate">旋转</button>
   <button catchtap='upload'>上传</button>
+  <button catchtap='saveImg'>保存</button>
 </view>

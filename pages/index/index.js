@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+const db = wx.cloud.database();
 
 Page({
   data: {
@@ -25,14 +26,34 @@ Page({
   },
   //功能跳转
   jumpPage: function (e){
+    let self = this;
     let type = e.currentTarget.dataset.type;
     switch (type) {
       case '1': //基于base64生成二维码
+        // db.collection('upload').add({
+        //   data:{
+        //     name: '测试名字',
+        //     age: '28'
+        //   },
+        //   success: res => {
+        //     self.setData({
+        //       cloudId: res._id
+        //     })
+            
+        //     console.log("云函数成功回调",res)
+        //   }
+        // })
         wx.navigateTo({
           url: '/pages/create-qrcode/create-qrcode',
         })
         break;
       case '2': //内容/图文折叠
+        // db.collection('upload').doc(self.data.cloudId).update({
+        //   data:{
+        //     name: '修改测试名字',
+        //     age: '38'
+        //   }
+        // }).then(res=>{ console.log("云函数修改数据回调",res) })
         wx.navigateTo({
           url: '/pages/content-folding/content-folding',
         })

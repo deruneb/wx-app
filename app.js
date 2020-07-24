@@ -16,6 +16,9 @@ Object.defineProperties(wx, {
 })
 App({
   onLaunch: function () {
+    wx.cloud.init({
+      env: 'deruneb-d1sqd'
+    })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
