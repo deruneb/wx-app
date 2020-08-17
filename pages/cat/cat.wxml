@@ -3,7 +3,7 @@
   <view class="areaw-outwrap">
     <view class="areawrap-innerwrap">
       <view class="area" wx:for="{{areas1}}" wx:key="unique">
-        <navigator url="{{index==0?'/pages/cat-home/cat-home':''}}">
+        <navigator url="{{url[index]}}">
           <view class="textwrap">
             <label>{{item.title}}</label>
           </view>

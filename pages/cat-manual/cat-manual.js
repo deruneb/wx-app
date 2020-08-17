@@ -1,29 +1,11 @@
-// pages/cat/cat.js
+// pages/cat-manual/cat-manual.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    areas1:[
-      {
-        title: '喵星百科',
-        img: 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/f5279d1e-25e6-4bfd-8793-045f8adbccc3.jpg'
-      },
-      {
-        title: '猫粮',
-        img: '../../images/area2.jpg'
-      },
-      {
-        title: '喵星入宅手册',
-        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597666772411&di=75f9e6e536f82dfdef84b463d9535c8d&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190927%2F6103f601d2a84af3977bd0f93ad44e58.jpeg'
-      },
-    ],
-    url:[
-      '/pages/cat-home/cat-home',
-      '',
-      '/pages/cat-manual/cat-manual'
-    ]
+
   },
 
   /**

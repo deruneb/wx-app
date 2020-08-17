@@ -1,0 +1,4 @@
+/* pages/cat-manual/cat-manual.wxss */
+.item-text text{
+  margin-bottom: 20rpx;
+}

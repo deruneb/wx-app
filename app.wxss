@@ -55,6 +55,16 @@ page {
 }
 
 /* 字体 */
+.title{
+  font-size: 34rpx;
+  color: #182b39;
+  font-weight: bold;
+  margin: 15rpx 0 20rpx;
+}
+.content{
+  font-size: 25rpx;
+  color: #3c4a55;
+}
 .font-35{
   font-size: 35rpx!important;
 }
@@ -66,6 +76,10 @@ page {
 }
 .bold{
   font-weight: bold;
+}
+.text-indent{
+  text-indent: 18rpx;
+  color: #999;
 }
 .color-gray{
   color: #B1BFCD;

@@ -21,7 +21,8 @@
     "pages/cropper-poster/cropper-poster",
     "pages/image-cropper-demo/image-cropper-demo",
     "pages/cat-home/cat-home",
-    "pages/cat-detail/cat-detail"
+    "pages/cat-detail/cat-detail",
+    "pages/cat-manual/cat-manual"
   ],
   "usingComponents": {
     "charts-task-pie": "./components/echarts/task-pie/task-pie",
