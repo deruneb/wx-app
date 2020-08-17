@@ -1,18 +1,17 @@
 /* pages/cat/cat.wxss */
 .areaw-outwrap{
   width: 100%;
-  padding: 0.4em 0;
+  padding: 16rpx 0;
   background: #fff;
-  margin-bottom: 0.2em;
+  margin-bottom: 8rpx;
 }
 .areaw-outwrap .areawrap-innerwrap{
   display: flex;
   flex-direction: column;
 }
 .areaw-outwrap .areawrap-innerwrap .area{
-  flex: 1;
-  height: 6em;
-  margin:0.2em;
+  height: 335rpx;
+  margin:8rpx;
   overflow: hidden;
   position: relative;
 }
@@ -20,7 +19,7 @@
 .areaw-outwrap .areawrap-innerwrap .area .textwrap{
   width: 100%;
   position: absolute;
-  bottom: 11rpx;
+  bottom:0;
   left: 0;
   background:linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); 
 }
@@ -32,5 +31,5 @@
 }
 .areaw-outwrap .areawrap-innerwrap .area image{
   width: 100%;
-  height: 320rpx;
+  height: 335rpx;
 }

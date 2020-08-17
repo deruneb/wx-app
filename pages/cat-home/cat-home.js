@@ -8,15 +8,15 @@ Page({
     catList:[
       {
         name: '金吉拉',
-        img: '../../images/cat-1.JPG'
+        img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=693754789,2746346524&fm=26&gp=0.jpg'
       },
       {
         name: '金渐层',
-        img: '../../images/cat-2.JPG'
+        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597668046589&di=ac7a87be799ae83279a87a9293cede6f&imgtype=0&src=http%3A%2F%2Fpic5.58cdn.com.cn%2Fzhuanzh%2Fn_v2d1f74456e8f04b6282d51c86e14a6e63.jpg%3Fw%3D750%26h%3D0'
       },
       {
         name: '橘猫',
-        img: '../../images/cat-3.JPG'
+        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597668111034&di=27fda38bc71c5be0547ff6f982c3f657&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe676be21d9ee538a7ab5cbdabbfc58685e025de067e7-5oPNs2_fw658'
       },
       {
         name: '狸花',
