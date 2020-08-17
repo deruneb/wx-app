@@ -1,7 +1,7 @@
 /**app.wxss**/
 page {
   min-height: 100vh;
-  background-color: rgba(36, 170, 125, .4);
+  background-color: #fff;
   color: #63717b;
   font-size: 32rpx;
   line-height: 1.6;
@@ -10,6 +10,14 @@ page {
   user-select: none;
   width: 100%;
   overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 /* flex */
@@ -61,6 +69,10 @@ page {
 }
 .color-gray{
   color: #B1BFCD;
+}
+
+.color-black{
+  color: #3a4c55;
 }
 /* 按钮效果 hover-class*/
 .btn-hover{

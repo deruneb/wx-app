@@ -1,0 +1,42 @@
+<!--pages/cat-detail/cat-detail.wxml-->
+<view>
+  <block wx:for="{{catDetailsList}}" :key="index">
+    <view class="detail-item" wx:if="{{id == index}}">
+      <view class="detail-cat flex">
+        <text>{{item.cat_name}}</text>
+        <image src="{{item.cat_img}}"></image>
+      </view>
+      <view class="flex flex-column" style="padding:0 20rpx;" wx:if="{{item.cat_brief}}">
+        <text class="border-left">简介</text>
+        <text>
+          {{item.cat_brief}}
+        </text>
+      </view>
+      <view class="flex flex-column" style="padding:0 20rpx;" wx:if="{{item.cat_habit}}">
+        <text class="border-left">生活习性</text>
+        <text>
+          {{item.cat_habit}}
+        </text>
+      </view>
+      <view class="flex flex-column" style="padding:0 20rpx;" wx:if="{{item.cat_grow}}">
+        <text class="border-left">生长繁殖</text>
+        <text>
+          {{item.cat_grow}}
+        </text>
+      </view>
+      <view class="flex flex-column" style="padding:0 20rpx;" wx:if="{{item.cat_food}}">
+        <text class="border-left">饲养食品</text>
+        <text>
+          {{item.cat_food}}
+        </text>
+      </view>
+      <view class="flex flex-column" style="padding:0 20rpx;" wx:if="{{item.cat_nursing}}">
+        <text class="border-left">日常护理</text>
+        <text>
+          {{item.cat_nursing}}
+        </text>
+      </view>
+    </view>
+  </block>
+  
+</view>

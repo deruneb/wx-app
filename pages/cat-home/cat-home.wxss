@@ -1,0 +1,28 @@
+/* pages/cat-home/cat-home.wxss */
+.avator {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 40rpx;
+  position: absolute;
+  align-items: center;
+  display:flex;
+  border-radius: 50%;
+}
+.divLine{
+  background: #eee;
+  height: 3rpx;
+  margin-left: 5rem;
+ }
+.catitem{
+  height: 3.7rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.cat-name{
+  font-size: 30rpx;
+  flex-direction:row;
+  margin-left: 5rem;
+  color:#353535;
+  text-align: center;
+}

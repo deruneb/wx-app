@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/cat/cat",
     "pages/index/index",
     "pages/logs/logs",
     "pages/space/space",
@@ -18,7 +19,9 @@
     "pages/map-fixed-point/map-fixed-point",
     "pages/real-time-websocket/real-time-websocket",
     "pages/cropper-poster/cropper-poster",
-    "pages/image-cropper-demo/image-cropper-demo"
+    "pages/image-cropper-demo/image-cropper-demo",
+    "pages/cat-home/cat-home",
+    "pages/cat-detail/cat-detail"
   ],
   "usingComponents": {
     "charts-task-pie": "./components/echarts/task-pie/task-pie",
@@ -41,14 +44,14 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "功能集合",
+        "pagePath": "pages/cat/cat",
+        "text": "猫咪",
         "iconPath": "/images/icon-index.png",
         "selectedIconPath": "/images/icon-index-select.png"
       },
       {
-        "pagePath": "pages/space/space",
-        "text": "Echarts",
+        "pagePath": "pages/index/index",
+        "text": "功能集合",
         "iconPath": "/images/icon-space.png",
         "selectedIconPath": "/images/icon-space-select.png"
       },

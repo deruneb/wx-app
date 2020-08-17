@@ -7,7 +7,7 @@
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
-  color: #fff;
+  color: #3c4a55;
   font-size: 28rpx;
   border: 1rpx solid #f1f2fc;
   margin: 20rpx auto;
