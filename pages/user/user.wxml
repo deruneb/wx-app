@@ -1,6 +1,6 @@
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" plain='true' open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="color: #fff;border-color: #fff;margin-top: 100rpx;"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" plain='true' open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="color: #3c4a55;border-color: #fff;margin-top: 100rpx;"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -8,7 +8,7 @@
     </block>
   </view>
   <view class="usermotto">
-    <button wx:if="{{hasUserInfo}}" plain='true' open-type="openSetting" bindopensetting="openSetting" style="color: #fff;border-color: #fff;">进入授权页</button>
+    <button wx:if="{{hasUserInfo}}" plain='true' open-type="openSetting" bindopensetting="openSetting" style="color: #3c4a55;border-color: #fff;">进入授权页</button>
   </view>
   <view class="company-out-box">
     <view class="com-li-bottom">

@@ -105,7 +105,7 @@ Page({
   jumpDetail(e){
     let catIndex = e.currentTarget.dataset.index;
     wx.navigateTo({
-      url: '/pages/cat-detail/cat-detail?id=' + catIndex
+      url: '/pages-cat/cat-detail/cat-detail?id=' + catIndex
     })
     console.log("eee",catIndex)
   }

@@ -19,10 +19,7 @@
     "pages/map-fixed-point/map-fixed-point",
     "pages/real-time-websocket/real-time-websocket",
     "pages/cropper-poster/cropper-poster",
-    "pages/image-cropper-demo/image-cropper-demo",
-    "pages/cat-home/cat-home",
-    "pages/cat-detail/cat-detail",
-    "pages/cat-manual/cat-manual"
+    "pages/image-cropper-demo/image-cropper-demo"
   ],
   "usingComponents": {
     "charts-task-pie": "./components/echarts/task-pie/task-pie",
@@ -64,6 +61,18 @@
       }
     ]
   },
+  "subpackages": [
+    {
+      "root": "pages-cat",
+      "pages": [
+        "cat-home/cat-home",
+        "cat-detail/cat-detail",
+        "cat-manual/cat-manual",
+        "cat-circle/cat-circle",
+        "cat-edit-circle/cat-edit-circle"
+      ]
+    }
+  ],
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

@@ -63,6 +63,20 @@
 					"id": -1,
 					"name": "pages/cat-manual/cat-manual",
 					"pathName": "pages/cat-manual/cat-manual",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages-cat/cat-circle/cat-circle",
+					"pathName": "pages-cat/cat-circle/cat-circle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages-cat/cat-edit-circle/cat-edit-circle",
+					"pathName": "pages-cat/cat-edit-circle/cat-edit-circle",
 					"scene": null
 				}
 			]

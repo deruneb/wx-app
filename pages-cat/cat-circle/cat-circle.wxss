@@ -1,0 +1,69 @@
+.circle-title{
+  position: relative;
+}
+
+.circle-cover{
+  margin-bottom: 80rpx;
+}
+
+.circle-cover,
+.circle-cover image{
+  width: 750rpx;
+  height: 450rpx;
+}
+
+.create-circle{
+  width: 53rpx;
+  height:51rpx;
+  position: absolute;
+  right: 18rpx;
+  top: 20rpx;
+}
+
+.user-photo{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 18rpx;
+  bottom: -35rpx;
+}
+
+.circle-cont{
+  padding: 25rpx 15rpx;
+  border-bottom: 1rpx solid #f7f7ff;
+}
+
+.circle-cont > view:nth-of-type(2){
+  width: 650rpx;
+}
+
+.circle-cont .item-user-photo{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.circle-cont .item-user-name{
+  font-size: 31rpx;
+  font-weight: bold;
+  /* color: #4F4F2F; */
+  color: #5D6B8E;
+}
+
+.circle-cont .item-text{
+  line-height: 36rpx;
+}
+
+.circle-cont .item-img{
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 20rpx;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

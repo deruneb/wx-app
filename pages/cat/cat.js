@@ -11,8 +11,8 @@ Page({
         img: 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/f5279d1e-25e6-4bfd-8793-045f8adbccc3.jpg'
       },
       {
-        title: '猫粮',
-        img: '../../images/area2.jpg'
+        title: '喵星圈',
+        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597723964475&di=0c433bc29e559119a831aba9a237e506&imgtype=0&src=http%3A%2F%2Fi1.17173cdn.com%2F2fhnvk%2FYWxqaGBf%2Fcms3%2FQYKzKHbkAlhxzbj.jpg'
       },
       {
         title: '喵星入宅手册',
@@ -20,9 +20,9 @@ Page({
       },
     ],
     url:[
-      '/pages/cat-home/cat-home',
+      '/pages-cat/cat-home/cat-home',
       '',
-      '/pages/cat-manual/cat-manual'
+      '/pages-cat/cat-manual/cat-manual'
     ]
   },
 

@@ -1,0 +1,14 @@
+<!--pages-cat/cat-edit-circle/cat-edit-circle.wxml-->
+<view>
+  <!-- 输入框 -->
+  <view>
+    <textarea class="text-area" bindinput="inputChange" style="width:700rpx;font-size: 26rpx;color:#3c4a55;" value="{{textValue}}" placeholder="这一喵的喵法..." placeholder-style="color:#B8B9B9;font-size:26rpx;"></textarea>
+  </view>
+  <!-- 图片 -->
+  <view class="img-box flex">
+    <!-- <image class="defult-img" src="../../images/default_image.png"></image> -->
+    <view class="upload-imgUrl" wx:for="{{images}}" :key="index" style="background-image:url('{{item}}')"></view>
+    <view class="upload-img" bindtap="uploadImg">+</view>
+    <!-- <uploadImages bindmyevent="myEventListener" count='{{countPic}}' showUrl="{{showImgUrl}}" uploadUrl="{{uploadImgUrl}}"></uploadImages> -->
+  </view>
+</view>

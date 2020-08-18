@@ -1,7 +1,7 @@
 <!--pages/cat-detail/cat-detail.wxml-->
 <view>
   <block wx:for="{{catDetailsList}}" :key="index">
-    <view class="detail-item" wx:if="{{id == index}}">
+    <view class="detail-item" style="padding-bottom:100rpx;" wx:if="{{id == index}}">
       <view class="detail-cat flex">
         <text>{{item.cat_name}}</text>
         <image src="{{item.cat_img}}"></image>
