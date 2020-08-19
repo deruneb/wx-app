@@ -1,5 +1,5 @@
 .circle-box{
-  margin-bottom: 50rpx;
+  /* margin-bottom: 100rpx; */
 }
 
 .circle-title{

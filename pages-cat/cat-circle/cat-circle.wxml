@@ -2,7 +2,7 @@
     <button plain='true' open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="color: #3c4a55;border-color: #fff;margin-top: 100rpx;border: 1rpx solid #ccc;font-size: 30rpx;"> 微信授权 </button>
 </block>
 <block wx:if="{{!!userInfo}}">
-  <view class="circle-box">
+  <view class="circle-box" wx:if="{{middleFlag}}" style="padding-bottom: 100rpx;">
     <!-- 头部 -->
     <view class="circle-title">
       <view class="circle-cover" bindtap="changeCover">

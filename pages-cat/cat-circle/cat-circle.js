@@ -17,6 +17,7 @@ Page({
     currentName: '', //当前评论name
     currentimeStamp: '', //当前评论timeStamp
     commentList: [], //评论数据
+    middleFlag: false
   },
 
   /**
@@ -37,6 +38,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let self = this;
     this.setData({
       userInfo: getApp().globalData.userInfo
     })
@@ -55,19 +57,23 @@ Page({
       })
     }else{
       this.setData({authorizationFlag: false})
-      this.getMiaoInfo();
-      this.getComment();
-      db.collection('circle-imgs').orderBy('timeStamp','desc').get({
-        success: res=>{
-          console.log("切换图片",res)
-          this.setData({
-            fileIDImg: res.data[0].fileIDImg
-          })
-        }
-      })
-      
+      this.initData();
     }
    
+  },
+
+  //初始化数据
+  initData: function (){
+    this.getMiaoInfo();
+    this.getComment();
+    db.collection('circle-imgs').orderBy('timeStamp','desc').get({
+      success: res=>{
+        this.setData({
+          fileIDImg: res.data[0].fileIDImg,
+          middleFlag: true
+        })
+      }
+    })
   },
 
   //获取喵星圈数据
@@ -107,7 +113,6 @@ Page({
 
   //用户授权
   getUserInfo: function(e) {
-    console.log(e)
     getApp().globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo
@@ -260,6 +265,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.stopPullDownRefresh({
+      complete: (res) => {
+        if(!this.data.authorizationFlag){
+          this.initData();
+    
+        }
+      }
+    })
 
   },
 

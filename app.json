@@ -31,7 +31,7 @@
     "ec-canvas": "./vendor/ec-canvas/ec-canvas"
   },
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
