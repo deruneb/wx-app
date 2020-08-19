@@ -21,7 +21,7 @@ Page({
     ],
     url:[
       '/pages-cat/cat-home/cat-home',
-      '',
+      '/pages-cat/cat-circle/cat-circle',
       '/pages-cat/cat-manual/cat-manual'
     ]
   },

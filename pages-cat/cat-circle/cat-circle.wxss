@@ -1,3 +1,7 @@
+.circle-box{
+  margin-bottom: 50rpx;
+}
+
 .circle-title{
   position: relative;
 }
@@ -58,12 +62,58 @@
 
 .circle-cont .item-text{
   line-height: 36rpx;
+  margin-bottom: 20rpx;
 }
 
 .circle-cont .item-img{
   width: 300rpx;
   height: 300rpx;
-  margin-top: 20rpx;
   background-size: cover;
   background-repeat: no-repeat;
+  margin-right: 10rpx;
+}
+/* .circle-cont .item-img:nth-child(even){
+  margin-right: 10rpx;
+} */
+.circle-cont .comments{
+  /* background-color: #F7F7F7; */
+  margin-top: 12rpx;
+}
+.input-model{
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.input-model .model-box{
+  width: 560rpx;
+  height: 260rpx;
+  font-size: 26rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 510;
+  margin: auto;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.input-model .model-box > view{
+  text-align: center;
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  border: 1rpx solid #ccc;
+  margin: 14rpx auto 0;
+  border-radius: 10rpx;
+}
+.area-model{
+  height: 180rpx;
+  width: 100%;
+
 }

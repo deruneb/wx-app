@@ -74,6 +74,9 @@ page {
 .font-24{
   font-size: 24rpx;
 }
+.font-22{
+  font-size: 24rpx;
+}
 .bold{
   font-weight: bold;
 }

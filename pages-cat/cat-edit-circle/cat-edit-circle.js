@@ -8,6 +8,9 @@ Page({
   data: {
     textValue: '',
     fileIdList: [], //上传图片id
+    imageList: [], //选中图片回显
+    idList: [],
+    copyText: '', //朋友圈文案
   },
 
   /**
@@ -28,10 +31,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    self.getUploadImg()
+    // self.getUploadImg()
   },
 
   inputChange: function(e){
+    this.setData({
+      copyText: e.detail.value
+    })
     console.log("输入",e.detail.value)
   },
 
@@ -42,12 +48,8 @@ Page({
       success: function(res) {
         console.log(res);//用于查看结果
         var image = res.tempFilePaths;
-        self.setData({
-            images:res.tempFilePaths 
-        });
-        console.log(self.data.images);//用于查看结果
         wx.showLoading({
-          title: '正在提交！',
+          title: '上传中',
         });
     
         for(let i = 0 ; i < image.length ; i++){
@@ -55,31 +57,18 @@ Page({
             cloudPath: (new Date()).getTime()+Math.floor(9*Math.random())+".jpg", // 上传至云端的路径
             filePath: res.tempFilePaths[i], // 小程序临时文件路径
             success: res => {
-              idList.push(res.fileID);
+              self.data.idList.push(res.fileID);
               self.setData({
-                fileIdList: idList
+                fileIdList: self.data.idList
               })
-              // 返回文件 ID
-              db.collection('circle-imgs').add({
-                data:{
-                  images: self.data.fileIdList
-                }
-              }).then(res=>{
-                console.log("上传信息成功")
-              }).catch(error => {
-                console.log("上传信息失败!")
-              })
-              console.log(res.fileID,"fileIdList",self.data.fileIdList)
-              wx.hideLoading();
+               wx.hideLoading()
+              console.log("fidId",self.data.fileIdList)
             },
             fail:function(){
               wx.hideLoading();
             },
-            
-      
           })
         }
-    
       }
     })
   },
@@ -90,6 +79,51 @@ Page({
       success:res=> {
         console.log("端获取",res.data)
       },
+    })
+  },
+
+  //返回上一页
+  returnBtn: function (){
+    wx.navigateBack({
+      delta: 1
+    })
+  },
+
+  //发布瞄圈
+  releaseBtn: function (){
+    let self = this;
+    if(!self.data.copyText){
+      wx.showToast({
+        icon: 'none',
+        title: '文案不能为空~~~哈拉少',
+      })
+      return
+    }
+    db.collection('circle-info').add({
+      data:{
+        name: getApp().globalData.userInfo.nickName,
+        photo: getApp().globalData.userInfo.avatarUrl,
+        copyText: self.data.copyText,
+        circleImgs: self.data.fileIdList,
+        timeStamp: new Date().getTime()
+      },
+      success: res => {
+        wx.showToast({
+          icon: 'none',
+          title: '发布成功了喵 >_<',
+        })
+        setTimeout(()=>{
+          wx.navigateBack({
+            delta: 1
+          });
+        },1000)
+      },
+      fail: res => {
+        wx.showToast({
+          icon: 'none',
+          title: '发布失败，请稍后再试，奥利给~',
+        })
+      }
     })
   },
 

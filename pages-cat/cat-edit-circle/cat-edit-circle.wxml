@@ -1,5 +1,11 @@
 <!--pages-cat/cat-edit-circle/cat-edit-circle.wxml-->
 <view>
+  <view class="flex justify-content-between align-items-center" style="margin-bottom:50rpx;padding: 0 20rpx;">
+    <view>
+      <image class="returnBtn" bindtap="returnBtn" src="../../images/fanhui.png"></image>
+    </view>
+    <view class="setBtn" bindtap="releaseBtn">发布</view>
+  </view>
   <!-- 输入框 -->
   <view>
     <textarea class="text-area" bindinput="inputChange" style="width:700rpx;font-size: 26rpx;color:#3c4a55;" value="{{textValue}}" placeholder="这一喵的喵法..." placeholder-style="color:#B8B9B9;font-size:26rpx;"></textarea>
@@ -7,7 +13,8 @@
   <!-- 图片 -->
   <view class="img-box flex">
     <!-- <image class="defult-img" src="../../images/default_image.png"></image> -->
-    <view class="upload-imgUrl" wx:for="{{images}}" :key="index" style="background-image:url('{{item}}')"></view>
+    <image class="upload-imgUrl" wx:for="{{fileIdList}}" wx:key="index" src="{{item}}"></image>
+    <!-- <image src="cloud://deruneb-d1sqd.6465-deruneb-d1sqd-1302715964/1597810991776.jpg"></image> -->
     <view class="upload-img" bindtap="uploadImg">+</view>
     <!-- <uploadImages bindmyevent="myEventListener" count='{{countPic}}' showUrl="{{showImgUrl}}" uploadUrl="{{uploadImgUrl}}"></uploadImages> -->
   </view>

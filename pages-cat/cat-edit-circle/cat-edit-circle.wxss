@@ -6,6 +6,7 @@
 
 .img-box{
   padding: 0 28rpx;
+  flex-wrap: wrap;
 }
 
 .defult-img{
@@ -27,4 +28,20 @@
   background-color: #F7F7F7;
   text-align: center;
   line-height: 200rpx;
+}
+
+.setBtn{
+  width: 108rpx;
+  border-radius: 8rpx;
+  height: 58rpx;
+  background-color: #07C160;
+  color: #fff;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 26rpx;
+}
+
+.returnBtn{
+  width: 50rpx;
+  height: 50rpx;
 }

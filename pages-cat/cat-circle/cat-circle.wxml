@@ -1,21 +1,55 @@
-<view class="circle-box">
-  <!-- 头部 -->
-  <view class="circle-title">
-    <view class="circle-cover">
-      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597724187613&di=04da75d575b9da911f1b92ab46e2b925&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3D53611b8fac0f4bfb8cd09e5c334f788f%2F7c2cc65c103853432a91f3319b13b07eca80884e.jpg"></image>  
+<block wx:if="{{!userInfo}}">
+    <button plain='true' open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="color: #3c4a55;border-color: #fff;margin-top: 100rpx;border: 1rpx solid #ccc;font-size: 30rpx;"> 微信授权 </button>
+</block>
+<block wx:if="{{!!userInfo}}">
+  <view class="circle-box">
+    <!-- 头部 -->
+    <view class="circle-title">
+      <view class="circle-cover" bindtap="changeCover">
+        <image src="{{!fileIDImg?'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597724187613&di=04da75d575b9da911f1b92ab46e2b925&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3D53611b8fac0f4bfb8cd09e5c334f788f%2F7c2cc65c103853432a91f3319b13b07eca80884e.jpg':fileIDImg}}"></image>  
+      </view>
+      <image class="create-circle" bindtap="jumpEdit" src="../../images/camera.png"></image>
+      <view class="user-photo" style="background-image:url('{{userInfo.avatarUrl}}')"></view>
     </view>
-    <image class="create-circle" bindtap="jumpEdit" src="../../images/camera.png"></image>
-    <view class="user-photo" style="background-image:url('../../images/cat-5.jpg')"></view>
-  </view>
-  <!-- 内容 -->
-  <view class="circle-cont flex">
-    <view class="item-user-photo" style="background-image:url('../../images/cat-5.jpg')"></view>
-    <view class="flex flex-column">
-      <text class="item-user-name">我是姓名</text>
-      <view class="item-content">
-        <view class="item-text font-28 color-black">的撒的撒的撒萨达斯的撒大声地大单大双大趣味无穷的武器多钱多钱多钱我的武器权威的轻微的气味第七位的撒</view>
-        <view class="item-img" style="background-image:url('../../images/cat-5.jpg')"></view>
+    <!-- 内容 -->
+    <block wx:for="{{miaoInfoList}}" wx:key="index">
+      <view class="circle-cont flex">
+        <!-- <view class="item-user-photo" style="background-image:url('../../images/cat-5.jpg')"></view> -->
+        <view class="item-user-photo">
+          <image class="item-user-photo" src="{{item.photo}}"></image>
+        </view>
+        
+        <view class="flex flex-column">
+          <text class="item-user-name">{{item.name || '姓名'}}</text>
+          <view class="item-content">
+            <view class="item-text font-28 color-black">{{item.copyText}}</view>
+            <block wx:for="{{item.circleImgs}}" wx:for-item="imgItem" wx:key="item">
+              <image class="item-img" bindtap="showImg" data-single="{{imgItem}}" data-list="{{item.circleImgs}}" src="{{imgItem}}" style="width:{{item.circleImgs.length == 1 ? '300rpx':'180rpx'}};height:{{item.circleImgs.length == 1 ? '300rpx':'180rpx'}};"></image>
+            </block>
+            <view class="color-gray font-22 flex justify-content-between" style="margin-top: 20rpx;">
+              <text>{{item.newTime}}</text>
+              <text bindtap="comment" data-userId="{{item._openid}}" data-name="{{item.name}}" data-timeStamp="{{item.timeStamp}}">评论</text>
+            </view>
+            <block wx:if="{{commentList.length > 0 }}">
+              <view class="comments">
+                <view class="font-24" style="background-color: #F7F7F7;padding: 0 10rpx;" wx:for="{{commentList}}" wx:for-item="comItem" wx:key="index" wx:if="{{(item._openid == comItem.currentUserId) && (item.timeStamp == comItem.currentimeStamp)}}">
+                  <text style="color: #5D6B8E;font-weight: bold;">{{comItem.selfName}}: </text>
+                  <text>{{comItem.commentext}}</text>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="input-model" wx:if="{{modelFlag}}">
+      <view class="input-model" bindtap="hideModel"></view>
+      <view class="model-box">
+        <textarea class="area-model" placeholder="评论" bindinput="inputText" value="{{commentext}}"></textarea>
+        <view bindtap="submitComment">提交</view>
       </view>
     </view>
+    <view wx:if="{{miaoInfoList.length == 0 || !miaoInfoList}}" class="font-22" style="text-align:center;"> -暂无内容- </view>
   </view>
-</view>
+</block>
+
