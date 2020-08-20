@@ -28,12 +28,23 @@
             </block>
             <view class="color-gray font-22 flex justify-content-between" style="margin-top: 20rpx;">
               <text>{{item.newTime}}</text>
-              <text bindtap="comment" data-userId="{{item._openid}}" data-name="{{item.name}}" data-timeStamp="{{item.timeStamp}}">评论</text>
+              <view>
+                <text bindtap="giveLike" data-userId="{{item._openid}}" data-name="{{item.name}}" data-timeStamp="{{item.timeStamp}}" style="margin-right: 8rpx;">点赞</text>
+                <text bindtap="comment" data-userId="{{item._openid}}" data-name="{{item.name}}" data-timeStamp="{{item.timeStamp}}">评论</text>
+              </view>
             </view>
+            <block wx:if="{{giveLikeList.length > 0 }}">
+              <view class="comments flex flex-wrap">
+                <view class="font-24 comments-bg flex align-items-center flex-wrap" style="background-color:#fff;"  wx:for="{{giveLikeList}}" wx:for-item="liveItem" wx:key="index" wx:if="{{(item._openid == liveItem.currentUserId) && (item.timeStamp == liveItem.currentimeStamp)}}">
+                  <image class="hert-img" src="{{liveItem.selfphoto}}" wx:if="{{(item._openid == liveItem.currentUserId) && (item.timeStamp == liveItem.currentimeStamp)}}"></image>
+                  <text class="comments-name">{{liveItem.selfName}}</text>
+                </view>
+              </view>
+            </block>
             <block wx:if="{{commentList.length > 0 }}">
               <view class="comments">
-                <view class="font-24" style="background-color: #F7F7F7;padding: 0 10rpx;" wx:for="{{commentList}}" wx:for-item="comItem" wx:key="index" wx:if="{{(item._openid == comItem.currentUserId) && (item.timeStamp == comItem.currentimeStamp)}}">
-                  <text style="color: #5D6B8E;font-weight: bold;">{{comItem.selfName}}: </text>
+                <view class="font-24 comments-bg" wx:for="{{commentList}}" wx:for-item="comItem" wx:key="index" wx:if="{{(item._openid == comItem.currentUserId) && (item.timeStamp == comItem.currentimeStamp)}}">
+                  <text class="comments-name">{{comItem.selfName}}: </text>
                   <text>{{comItem.commentext}}</text>
                 </view>
               </view>

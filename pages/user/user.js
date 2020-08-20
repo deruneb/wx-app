@@ -60,6 +60,35 @@ Page({
     })
     let sex = e.detail.userInfo.gender == 0 ? '未知' :e.detail.userInfo.gender == 1?'男':'女';
     if(e.detail.userInfo){
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey
+          console.log(res.code)
+          if(res.code){
+            console.log(res.code)
+            wx.request({
+              url: 'https://api.weixin.qq.com/sns/jscode2session',//微信服务器获取appid的网址 不用变
+              method:'post',//必须是post方法
+              data:{
+                js_code:res.code,
+                appid:'wx96d9a606d24aef3b',//仅为实例appid
+                secret:'3c8c6cf90a5f36a9f39f62fb22ff0fbc',//仅为实例secret
+                grant_type:'authorization_code'
+              },
+              header: {
+                'content-type': 'application/x-www-form-urlencoded',
+              },
+              success:function(response){
+                console.log(response.data)
+                wx.setStorageSync('app_openid', response.data.openid); 
+                wx.setStorageSync('sessionKey', response.data.session_key)//将session_key 存入本地缓存命名为SessionKey
+              }
+            })
+          }else{
+            console.log("登陆失败");
+          }
+        }
+      })
       db.collection('upload').add({
         data:{
           name: e.detail.userInfo.nickName,

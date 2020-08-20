@@ -54,6 +54,10 @@ page {
   align-items: center;
 }
 
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
 /* 字体 */
 .title{
   font-size: 34rpx;

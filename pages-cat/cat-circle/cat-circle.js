@@ -17,7 +17,9 @@ Page({
     currentName: '', //当前评论name
     currentimeStamp: '', //当前评论timeStamp
     commentList: [], //评论数据
-    middleFlag: false
+    giveLikeList: [], //点赞用户
+    middleFlag: false,
+    openid: '', //用户标识
   },
 
   /**
@@ -40,7 +42,8 @@ Page({
   onShow: function () {
     let self = this;
     this.setData({
-      userInfo: getApp().globalData.userInfo
+      userInfo: getApp().globalData.userInfo,
+      openid: wx.getStorageSync('app_openid')
     })
     if(!getApp().globalData.userInfo){
       this.setData({authorizationFlag: true});
@@ -66,13 +69,23 @@ Page({
   initData: function (){
     this.getMiaoInfo();
     this.getComment();
+    this.getGiveLike();
+    
+    // userOpenId: wx.getStorageSync('app_openid')
     db.collection('circle-imgs').orderBy('timeStamp','desc').get({
       success: res=>{
-        this.setData({
-          fileIDImg: res.data[0].fileIDImg,
-          middleFlag: true
+        res.data.forEach((item)=>{
+          if(item._openid == wx.getStorageSync('app_openid')){
+            this.setData({
+              fileIDImg: item.fileIDImg,
+            })
+          }
         })
+        console.log("背景图啊",res.data,"wx.getStorageSync('app_openid'",wx.getStorageSync('app_openid'))
       }
+    })
+    this.setData({
+      middleFlag: true
     })
   },
 
@@ -101,7 +114,28 @@ Page({
         })
         console.log("对应评论",res.data)
       }
-    })
+    });
+  },
+
+  //获取对应点赞
+  getGiveLike: function (){
+    db.collection('give-like').orderBy('timeStamp','desc').get({
+      success: res=>{
+        for (var i = 0; i < res.data.length; i++) {
+          for (var j = i+1; j <res.data.length; ) {
+              if ((res.data[i]._openid == res.data[j]._openid) && (res.data[i].currentimeStamp == res.data[j].currentimeStamp)) {//通过photoid属性进行匹配；
+                  res.data.splice(j, 1);//去除重复的对象；
+              }else {
+                  j++;
+              }
+          }
+        }
+        this.setData({
+          giveLikeList: res.data
+        })
+        console.log("对应点赞",res.data)
+      }
+    });
   },
 
   //编辑喵星圈
@@ -118,10 +152,42 @@ Page({
       userInfo: e.detail.userInfo
     })
     let sex = e.detail.userInfo.gender == 0 ? '未知' :e.detail.userInfo.gender == 1?'男':'女';
+    let self = this;
     if(e.detail.userInfo){
-      this.setData({authorizationFlag:false})
-      this.onShow();
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey
+          console.log(res.code)
+          if(res.code){
+            console.log(res.code)
+            wx.request({
+              url: 'https://api.weixin.qq.com/sns/jscode2session',//微信服务器获取appid的网址 不用变
+              method:'post',//必须是post方法
+              data:{
+                js_code:res.code,
+                appid:'wx96d9a606d24aef3b',//仅为实例appid
+                secret:'3c8c6cf90a5f36a9f39f62fb22ff0fbc',//仅为实例secret
+                grant_type:'authorization_code'
+              },
+              header: {
+                'content-type': 'application/x-www-form-urlencoded',
+              },
+              success:function(response){
+                console.log(response.data)
+                wx.setStorageSync('app_openid', response.data.openid); 
+                wx.setStorageSync('sessionKey', response.data.session_key)//将session_key 存入本地缓存命名为SessionKey
+               
+              }
+            })
+          }else{
+            console.log("登陆失败");
+          }
+        }
+      })
       
+      self.setData({authorizationFlag:false})
+      self.onShow();
+
       db.collection('upload').add({
         data:{
           name: e.detail.userInfo.nickName,
@@ -197,7 +263,6 @@ Page({
 
   //评论蒙层
   comment: function (e){
-    console.log("少时诵诗书",e.currentTarget.dataset)
     this.setData({
       modelFlag:true,
       currentUserId: e.currentTarget.dataset.userid,
@@ -241,6 +306,29 @@ Page({
       }
     })
     console.log("commentext",this.data.commentext)
+  },
+
+  //点赞
+  giveLike: function (e){
+     let currentUserId = e.currentTarget.dataset.userid,
+      currentName = e.currentTarget.dataset.name,
+      currentimeStamp = e.currentTarget.dataset.timestamp;
+  
+    db.collection('give-like').add({
+      data:{
+        currentUserId: currentUserId, //被点赞用户UserId
+        currentName: currentName, //被点赞用户姓名
+        currentimeStamp: currentimeStamp, //被点赞用户喵星圈发布时间
+        selfName: getApp().globalData.userInfo.nickName, //点赞人姓名
+        selfphoto: getApp().globalData.userInfo.avatarUrl, //点赞人头像
+        selfOpenID: wx.getStorageSync('app_openid'), //点赞人标识
+        timeStamp: new Date().getTime()
+      },
+      success: res=>{
+        this.getGiveLike();
+      }
+    })
+   
   },
 
   guid: function () {
