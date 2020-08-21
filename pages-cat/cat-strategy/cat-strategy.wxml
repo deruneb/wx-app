@@ -1,0 +1,6 @@
+<view>
+  <view class="strategy-item" bindtap="jumpAdd">
+    <image class="item-img" mode="aspectFill" src="../../images/cat-5.jpg"></image>
+    <text class="item-text">奥利给大大萨达所多撒多无群多群无多群无多我确定强无敌我去</text>
+  </view>
+</view>

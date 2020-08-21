@@ -79,7 +79,7 @@ page {
   font-size: 24rpx;
 }
 .font-22{
-  font-size: 24rpx;
+  font-size: 22rpx;
 }
 .bold{
   font-weight: bold;

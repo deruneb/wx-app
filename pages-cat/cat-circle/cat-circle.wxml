@@ -42,7 +42,7 @@
               </view>
             </block>
             <block wx:if="{{commentList.length > 0 }}">
-              <view class="comments">
+              <view class="comments" style="border-top: 1rpx solid #F7F7F7;padding-top: 12rpx;">
                 <view class="font-24 comments-bg" wx:for="{{commentList}}" wx:for-item="comItem" wx:key="index" wx:if="{{(item._openid == comItem.currentUserId) && (item.timeStamp == comItem.currentimeStamp)}}">
                   <text class="comments-name">{{comItem.selfName}}: </text>
                   <text>{{comItem.commentext}}</text>

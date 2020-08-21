@@ -1,0 +1,21 @@
+<view class='content'>
+	<view class='left'>
+		<block wx:for="{{leftList}}" wx:key="index">
+      <view style="position:relative;" bindtap="jumpDetail" data-id="{{index}}">
+			  <image class='pic' style='height:{{item.CoverHeight}};' src='{{item.Cover}}'></image>
+        <text class="item-title">{{item.text}}</text>
+      </view>
+		</block>
+	</view>
+	<view class='right'>
+		<block wx:for="{{rightList}}" wx:key="index">
+			<view style="position:relative;" bindtap="jumpDetail" data-id="{{index}}">
+			  <image class='pic' style='height:{{item.CoverHeight}};' src='{{item.Cover}}'></image>
+        <text class="item-title">{{item.text}}</text>
+      </view>
+		</block>
+	</view>
+  <view class="add-img" bindtap="jumpPop" style="right:{{addImgRight}}rpx">
+    <image src="../../images/add-5.png" bindtap="jumpAdd"></image>
+  </view>
+</view>

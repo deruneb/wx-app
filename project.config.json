@@ -78,6 +78,20 @@
 					"id": -1,
 					"name": "pages-cat/cat-edit-circle/cat-edit-circle",
 					"pathName": "pages-cat/cat-edit-circle/cat-edit-circle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages-cat/cat-strategy/cat-strategy",
+					"pathName": "pages-cat/cat-strategy/cat-strategy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages-cat/cat-strategy-detail/cat-strategy-detail",
+					"pathName": "pages-cat/cat-strategy-detail/cat-strategy-detail",
 					"scene": null
 				}
 			]

@@ -85,13 +85,15 @@
 .circle-cont .comments{
   /* background-color: #F7F7F7; */
   margin-top: 12rpx;
+  
 }
 .circle-cont .comments-bg{
-  background-color: #F7F7F7;
+  /* background-color: #F7F7F7; */
   padding: 0 10rpx;
 }
 .circle-cont .comments-name{
-  color: #5D6B8E;
+  /* color: #5D6B8E; */
+  color: #5992D2;
   font-weight: bold;
 }
 .input-model{

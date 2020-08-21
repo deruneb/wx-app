@@ -69,7 +69,11 @@
         "cat-detail/cat-detail",
         "cat-manual/cat-manual",
         "cat-circle/cat-circle",
-        "cat-edit-circle/cat-edit-circle"
+        "cat-edit-circle/cat-edit-circle",
+        "cat-strategy/cat-strategy",
+        "cat-strategy-detail/cat-strategy-detail",
+        "cat-strategy-edit/cat-strategy-edit",
+        "cat-photo-album/cat-photo-album"
       ]
     }
   ],

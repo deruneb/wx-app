@@ -1,5 +1,5 @@
 <view>
-  <view wx:for="{{catList}}" :key="index">
+  <view wx:for="{{catList}}" wx:key="index">
     <view class="catitem" bindtap="jumpDetail" data-index="{{index}}">
       <image  class="avator" src="{{item.img}}" mode='aspectFill' ></image>
       <view class="cat-name">{{item.name}}</view> 

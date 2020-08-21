@@ -1,0 +1,11 @@
+<!--pages-cat/cat-strategy-detail/cat-strategy-detail.wxml-->
+<view>
+  <view class="strategy-content">
+    <view class="flex flex-column title">
+      <text>霸业何磊啊啊啊啊</text>
+      <text class="font-22 color-gray">2012222</text>
+    </view>
+    <view></view>
+  </view>
+  
+</view>
