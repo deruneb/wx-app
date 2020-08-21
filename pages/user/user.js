@@ -72,7 +72,7 @@ Page({
               data:{
                 js_code:res.code,
                 appid:'wx96d9a606d24aef3b',//仅为实例appid
-                secret:'3c8c6cf90a5f36a9f39f62fb22ff0fbc',//仅为实例secret
+                secret:'',//仅为实例secret
                 grant_type:'authorization_code'
               },
               header: {
