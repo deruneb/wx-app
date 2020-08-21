@@ -1,6 +1,7 @@
 // pages-cat/cat-circle/cat-circle.js
 const db = wx.cloud.database(),
-    utils = require('../../utils/util.js');
+    utils = require('../../utils/util.js'),
+    config = require('../../config.js');
 Page({
 
   /**
@@ -165,8 +166,8 @@ Page({
               method:'post',//必须是post方法
               data:{
                 js_code:res.code,
-                appid:'wx96d9a606d24aef3b',//仅为实例appid
-                secret:'',//仅为实例secret
+                appid: config.appid,//仅为实例appid
+                secret: config.secret,//仅为实例secret
                 grant_type:'authorization_code'
               },
               header: {
