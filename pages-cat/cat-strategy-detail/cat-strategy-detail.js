@@ -1,32 +1,38 @@
 // pages-cat/cat-strategy-detail/cat-strategy-detail.js
+const strategyData = require('../../utils/strategy.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageId: '', //跳转页id
+    detailData: [], //详情数据
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      pageId: options.id,
+      detailData: strategyData.strategy
+    })
     console.log("奥利给",options)
-  },
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

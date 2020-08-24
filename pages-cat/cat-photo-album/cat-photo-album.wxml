@@ -1,21 +1,6 @@
-<view class='content'>
-	<view class='left'>
-		<block wx:for="{{leftList}}" wx:key="index">
-      <view style="position:relative;" bindtap="jumpDetail" data-id="{{index}}">
-			  <image class='pic' style='height:{{item.CoverHeight}};' src='{{item.Cover}}'></image>
-        <text class="item-title">{{item.text}}</text>
-      </view>
-		</block>
-	</view>
-	<view class='right'>
-		<block wx:for="{{rightList}}" wx:key="index">
-			<view style="position:relative;" bindtap="jumpDetail" data-id="{{index}}">
-			  <image class='pic' style='height:{{item.CoverHeight}};' src='{{item.Cover}}'></image>
-        <text class="item-title">{{item.text}}</text>
-      </view>
-		</block>
-	</view>
-  <view class="add-img" bindtap="jumpPop" style="right:{{addImgRight}}rpx">
-    <image src="../../images/add-5.png" bindtap="jumpAdd"></image>
+<view>
+  <view class="strategy-item" bindtap="jumpAdd">
+    <image class="item-img" mode="aspectFill" src="../../images/cat-5.jpg"></image>
+    <text class="item-text">奥利给大大萨达所多撒多无群多群无多群无多我确定强无敌我去</text>
   </view>
 </view>

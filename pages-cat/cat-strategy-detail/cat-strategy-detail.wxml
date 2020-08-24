@@ -1,11 +1,15 @@
 <!--pages-cat/cat-strategy-detail/cat-strategy-detail.wxml-->
 <view>
-  <view class="strategy-content">
-    <view class="flex flex-column title">
-      <text>霸业何磊啊啊啊啊</text>
-      <text class="font-22 color-gray">2012222</text>
+  <block wx:for="{{detailData}}" wx:key="index">
+    <view class="strategy-content" wx:if="{{pageId == item.id}}">
+      <view class="flex flex-column title">
+        <text>{{item.coverTitle}}</text>
+        <text class="font-22 color-gray">{{item.coverTime}} 转载于抖音博主</text>
+      </view>
+      <view class="flex flex-column">
+        <image mode="widthFix" src="{{item.detailImg || item.coverImg}}"></image>
+        <text class="color-black">{{item.detail}}</text>
+      </view>
     </view>
-    <view></view>
-  </view>
-  
+  </block>
 </view>

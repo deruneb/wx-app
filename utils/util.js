@@ -92,7 +92,60 @@ function getAPHour(hour) {
   return hour;
 }
 
+//上传
+const uploadResource = function (cb){
+  let self = this;
+  wx.chooseImage({
+    count:1,
+    success: function(res) {
+      wx.showToast({
+        icon:'none',
+        title: '上传图片中',
+      });
+  
+      wx.cloud.uploadFile({
+        cloudPath: (new Date()).getTime()+Math.floor(9*Math.random())+".jpg", // 上传至云端的路径
+        filePath: res.tempFilePaths[0], // 小程序临时文件路径
+        success: res => {
+          var file = res.fileID,db = wx.cloud.database();
+          db.collection('resources-file').add({
+            data:{
+              fileRes: file,
+              timeStamp: new Date().getTime()
+            },
+            success: res=>{
+              !!cb && cb();
+              console.log("奥利给")
+            }
+          })
+          wx.showToast({
+            icon:'none',
+            title: '上传成功',
+          })
+        },
+        fail:function(){
+          wx.hideLoading();
+        },
+      })
+    }
+  })
+ 
+}
+
+//获取资源
+const getResource = function (cb){
+  var db = wx.cloud.database();
+  db.collection('resources-file').orderBy('timeStamp','desc').get({
+    success: res=>{
+      let data = res.data;
+      !!cb && cb(data);
+    }
+  })
+}
+
 module.exports = {
   formatTime,
-  getDateDiff
+  getDateDiff,
+  uploadResource,
+  getResource
 }
