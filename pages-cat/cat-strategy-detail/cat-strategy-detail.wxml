@@ -4,7 +4,7 @@
     <view class="strategy-content" wx:if="{{pageId == item.id}}">
       <view class="flex flex-column title">
         <text>{{item.coverTitle}}</text>
-        <text class="font-22 color-gray">{{item.coverTime}}</text>
+        <text class="font-22 color-gray" style="text-align: right;">{{item.coverTime}}</text>
       </view>
       <view class="flex flex-column align-items-center">
         <image mode="widthFix" wx:if="{{!item.detailImg || item.detailImg.length == 0}}" src="{{item.coverImg}}"></image>
