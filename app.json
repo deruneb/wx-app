@@ -43,7 +43,7 @@
     "list": [
       {
         "pagePath": "pages/cat/cat",
-        "text": "猫咪",
+        "text": "喵星",
         "iconPath": "/images/icon-index.png",
         "selectedIconPath": "/images/icon-index-select.png"
       },
