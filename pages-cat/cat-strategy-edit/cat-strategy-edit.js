@@ -97,6 +97,48 @@ Page({
   //保存设置
   saveStrategy: function (){
     let self = this,tipsNum = this.data.listLength += 1;
+    if(!self.data.coverImg){
+      wx.showToast({
+        icon: 'none',
+        title: '封面图片不能为空!',
+      })
+      return
+    }
+    if(!self.data.coverHeight){
+      wx.showToast({
+        icon: 'none',
+        title: '封面图片高度不能为空!',
+      })
+      return
+    }
+    if(!!self.data.coverHeight && self.data.coverHeight < 200){
+      wx.showToast({
+        icon: 'none',
+        title: '封面图片高度不能低于200!',
+      })
+      return
+    }
+    if(!self.data.coverTime){
+      wx.showToast({
+        icon: 'none',
+        title: '攻略创建时间不能为空!',
+      })
+      return
+    }
+    if(!self.data.coverTitle){
+      wx.showToast({
+        icon: 'none',
+        title: '攻略标题不能为空!',
+      })
+      return
+    }
+    if(!self.data.detail){
+      wx.showToast({
+        icon: 'none',
+        title: '攻略详情不能为空!',
+      })
+      return
+    }
     db.collection('strategy-list').add({
       data:{
         id: tipsNum,

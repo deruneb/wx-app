@@ -10,8 +10,12 @@
 }
 
 .edit-box > view text:nth-of-type(1){
-  width: 140rpx;
+  width: 160rpx;
   margin-right: 26rpx;
+}
+.edit-box > .item-edit text:nth-of-type(1)::before{
+  content: '· ';
+  color: red;
 }
 
 .edit-box .startegy-upload{
