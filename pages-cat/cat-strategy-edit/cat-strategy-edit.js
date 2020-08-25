@@ -149,8 +149,8 @@ Page({
         coverWidth: 350, 
         detail: self.data.detail,
         detailImg: self.data.detailImg,
-        userName: getApp().globalData.userInfo.nickName,
-        userPhoto: getApp().globalData.userInfo.avatarUrl
+        userName: getApp().globalData.userInfo.nickName || '未授权的热心网友',
+        userPhoto: getApp().globalData.userInfo.avatarUrl || 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/45a1703d-ea27-48d1-8c3e-d09614bc31ad.jpg'
       },
       success: res=>{
         wx.showToast({
