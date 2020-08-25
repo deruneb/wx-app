@@ -60,7 +60,7 @@ page{
 .add-img{
   position: fixed;
   bottom: 150rpx;
-  transition: right 1s;
+  transition: right .7s;
   width: 62rpx;
   background-color: #fff;
   border: 1rpx solid #7D95C1;

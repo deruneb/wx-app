@@ -161,3 +161,24 @@ page {
   word-break: keep-all;
   word-wrap: break-word;
 }
+
+/* 上传图片样式 */
+.upload-img{
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #F7F7F7;
+  text-align: center;
+  line-height: 200rpx;
+}
+
+/* 通用提交按钮样式 */
+.submit-btn{
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #27C6B3;
+  border-radius: 10rpx;
+  margin: 250rpx auto 0;
+}

@@ -1,51 +1,12 @@
-const strategyData = require('../../utils/strategy.js');
+const db = wx.cloud.database(),
+  utils = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
-    noramalData: [
-      // {
-      //   Cover: "http://dashus.oss-cn-shenzhen.aliyuncs.com/DefaultImage/Game/20190306144842/1001.png",
-      //   CoverHeight: 467,
-      //   CoverWidth: 350,
-      //   text: "奥利给"
-      // },
-      // {
-      //   Cover: "http://dashus.oss-cn-shenzhen.aliyuncs.com/DefaultImage/Game/20190306144842/1001.png",
-      //   CoverHeight: 427,
-      //   CoverWidth: 350,
-      //   text: "奥利给"
-      // },
-      // {
-      //   Cover: "http://dashus.oss-cn-shenzhen.aliyuncs.com/DefaultImage/Game/20190306144842/1001.png",
-      //   CoverHeight: 367,
-      //   CoverWidth: 350,
-      //   text: "奥利给"
-      // },
-      // {
-      //   Cover: "http://dashus.oss-cn-shenzhen.aliyuncs.com/DefaultImage/Game/20190306144842/1001.png",
-      //   CoverHeight: 367,
-      //   CoverWidth: 350,
-      //   text: "奥利给"
-      // },
-      // {
-      //   Cover: "http://dashus.oss-cn-shenzhen.aliyuncs.com/DefaultImage/Game/20190306144842/1001.png",
-      //   CoverHeight: 567,
-      //   CoverWidth: 350,
-      //   text: "奥利给"
-      // },
-      // {
-      //   Cover: "http://dashus.oss-cn-shenzhen.aliyuncs.com/DefaultImage/Game/20190306144842/1001.png",
-      //   CoverHeight: 467,
-      //   CoverWidth: 350,
-      //   text: "奥利给"
-      // },
-      
-    ],
-  
+    noramalData: [], //数据列表
     leftList: [],
     rightList: [],
     leftHight: 0,
@@ -54,14 +15,33 @@ Page({
   },
     //以本地数据为例，实际开发中数据整理以及加载更多等实现逻辑可根据实际需求进行实现   
   onLoad: function(options) {
-    this.setData({
-      noramalData: strategyData.strategy 
-    })
-    this.waterfallInit()
+    
   },
 
   onShow: function (){
+    this.setData({
+      leftHight: 0,
+      rightHight: 0,
+    })
+    this.initData();
+  },
 
+  onPullDownRefresh: function () {
+    this.initData();
+  },
+
+  //初始化数据
+  initData: function (){
+    let self = this;
+    //获取数据
+    utils.getStrategyList((data)=>{
+      self.setData({
+        noramalData: data
+      })
+      setTimeout(()=>{ self.waterfallInit(); },1000)
+      console.log("datadatadata",self.data.noramalData)
+      
+    })
   },
 
   //瀑布初始化
@@ -75,7 +55,9 @@ Page({
     var rightData = [];
     for (let i = 0; i < allData.length; i++) {
       var currentItemHeight = parseInt(Math.round(allData[i].coverHeight * 345 / allData[i].coverWidth));
-      allData[i].coverHeight = currentItemHeight + "rpx";//因为xml文件中直接引用的该值作为高度，所以添加对应单位
+      allData[i].coverHeight = currentItemHeight;
+      console.log("leftHleftH",leftH)
+      console.log("rightHrightH",rightH)
       if (leftH == rightH || leftH < rightH) {//判断左右两侧当前的累计高度，来确定item应该放置在左边还是右边
         leftData.push(allData[i]);
         leftH += currentItemHeight;
@@ -114,5 +96,10 @@ Page({
     },3000)
   },
 
-  
+  //调整增加
+  jumpAdd: function (){
+    wx.navigateTo({
+      url: '/pages-cat/cat-strategy-edit/cat-strategy-edit?listLength=' + this.data.noramalData.length,
+    })
+  }
 })

@@ -4,11 +4,12 @@
     <view class="strategy-content" wx:if="{{pageId == item.id}}">
       <view class="flex flex-column title">
         <text>{{item.coverTitle}}</text>
-        <text class="font-22 color-gray">{{item.coverTime}} 转载于抖音博主</text>
+        <text class="font-22 color-gray">{{item.coverTime}}</text>
       </view>
-      <view class="flex flex-column">
-        <image mode="widthFix" src="{{item.detailImg || item.coverImg}}"></image>
-        <text class="color-black">{{item.detail}}</text>
+      <view class="flex flex-column align-items-center">
+        <image mode="widthFix" wx:if="{{!item.detailImg || item.detailImg.length == 0}}" src="{{item.coverImg}}"></image>
+        <image mode="widthFix" wx:if="{{item.detailImg && item.detailImg.length > 0}}" wx:for="{{item.detailImg}}" wx:for-item="detailItem" src="{{detailItem}}"></image>
+        <text class="color-black" style="text-indent: 46rpx;margin-top:10rpx;">{{item.detail}}</text>
       </view>
     </view>
   </block>

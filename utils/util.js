@@ -1,3 +1,5 @@
+var db = wx.cloud.database();
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -132,9 +134,8 @@ const uploadResource = function (cb){
  
 }
 
-//获取资源
+//获取上传图片资源
 const getResource = function (cb){
-  var db = wx.cloud.database();
   db.collection('resources-file').orderBy('timeStamp','desc').get({
     success: res=>{
       let data = res.data;
@@ -143,9 +144,89 @@ const getResource = function (cb){
   })
 }
 
+//获取单个图片fileId
+const getFileId = function (cb){
+  let self = this;
+  wx.chooseImage({
+    count:1,
+    success: function(res) {
+      wx.showToast({
+        icon:'none',
+        title: '上传图片中',
+      });
+  
+      wx.cloud.uploadFile({
+        cloudPath: (new Date()).getTime()+Math.floor(9*Math.random())+".jpg", // 上传至云端的路径
+        filePath: res.tempFilePaths[0], // 小程序临时文件路径
+        success: res => {
+          var file = res.fileID;
+          !!cb && cb(file)
+          wx.showToast({
+            icon:'none',
+            title: '上传成功',
+          })
+        },
+        fail:function(){
+          wx.hideLoading();
+        },
+      })
+    }
+  })
+ 
+}
+
+//获取多图fileId
+const getMoreFileId = function(cb){
+  var idList = [];
+  wx.chooseImage({
+    count: 9,
+    success: function(res) {
+      console.log(res);//用于查看结果
+      var image = res.tempFilePaths;
+      
+      wx.showToast({
+        icon:'none',
+        title: '上传图片中',
+      });
+  
+      for(let i = 0 ; i < image.length ; i++){
+        wx.cloud.uploadFile({
+          cloudPath: (new Date()).getTime()+Math.floor(9*Math.random())+".jpg", // 上传至云端的路径
+          filePath: res.tempFilePaths[i], // 小程序临时文件路径
+          success: res => {
+            idList.push(res.fileID);
+            !!cb && cb(idList)
+            wx.showToast({
+              icon:'none',
+              title: '上传成功',
+            })
+          },
+          fail:function(){
+          },
+        })
+      }
+     
+    }
+  })
+}
+
+//获取攻略数据
+const getStrategyList = function (cb){
+  db.collection('strategy-list').orderBy('id','desc').get({
+    success: res=>{
+      let data = res.data;
+      !!cb && cb(data);
+      console.log("数据列表",res)
+    }
+  })
+}
+
 module.exports = {
   formatTime,
   getDateDiff,
   uploadResource,
-  getResource
+  getResource,
+  getFileId,
+  getMoreFileId,
+  getStrategyList
 }

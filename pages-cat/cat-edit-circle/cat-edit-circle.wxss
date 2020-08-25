@@ -22,14 +22,6 @@
   margin-right: 10rpx;
 }
 
-.upload-img{
-  width: 200rpx;
-  height: 200rpx;
-  background-color: #F7F7F7;
-  text-align: center;
-  line-height: 200rpx;
-}
-
 .setBtn{
   width: 108rpx;
   border-radius: 8rpx;

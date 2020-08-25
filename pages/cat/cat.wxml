@@ -7,7 +7,7 @@
           <view class="textwrap">
             <label>{{item.title}}</label>
           </view>
-          <image src="{{item.img}}" mode="scaleToFill"></image>
+          <image src="{{item.img}}" mode="widthFix"></image>
         </navigator>
       </view>
     </view>

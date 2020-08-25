@@ -1,1 +1,22 @@
 /* pages-cat/cat-strategy-edit/cat-strategy-edit.wxss */
+.edit-box{
+  padding: 20rpx;
+}
+
+.edit-box > view:not(:last-child){
+  display: flex;
+  align-items: center;
+  margin-bottom: 26rpx;
+}
+
+.edit-box > view text:nth-of-type(1){
+  width: 140rpx;
+  margin-right: 26rpx;
+}
+
+.edit-box .startegy-upload{
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 10rpx;
+}

@@ -92,6 +92,13 @@
 					"id": -1,
 					"name": "pages-cat/cat-strategy-detail/cat-strategy-detail",
 					"pathName": "pages-cat/cat-strategy-detail/cat-strategy-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages-cat/cat-strategy-edit/cat-strategy-edit",
+					"pathName": "pages-cat/cat-strategy-edit/cat-strategy-edit",
 					"scene": null
 				}
 			]

@@ -20,7 +20,7 @@ Page({
       },
       {
         title: '科学养宠攻略',
-        img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597666772411&di=75f9e6e536f82dfdef84b463d9535c8d&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190927%2F6103f601d2a84af3977bd0f93ad44e58.jpeg'
+        img: 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/6e238a80-5232-4015-99b3-154703be81e9.png'
       },
     ],
     url:[

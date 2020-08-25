@@ -1,5 +1,5 @@
 // pages-cat/cat-strategy-detail/cat-strategy-detail.js
-const strategyData = require('../../utils/strategy.js');
+const utils = require('../../utils/util.js');
 Page({
 
   /**
@@ -8,6 +8,7 @@ Page({
   data: {
     pageId: '', //跳转页id
     detailData: [], //详情数据
+    optionsData: {},
   },
 
   /**
@@ -15,24 +16,30 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      pageId: options.id,
-      detailData: strategyData.strategy
+      optionsData: options
     })
-    console.log("奥利给",options)
-
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    wx.showLoading({
+      title: '加载中...',
+    })
+    let self = this;
+    //获取数据
+    utils.getStrategyList((data)=>{
+      wx.hideLoading();
+      self.setData({
+        pageId: self.data.optionsData.id,
+        detailData: data
+      })
+      wx.setNavigationBarTitle({
+        title: self.data.detailData[self.data.pageId].coverTitle,
+      })
+      
+    })
   },
 
   /**
@@ -67,6 +74,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let self = this,index = this.data.pageId;
+    let shareData = self.data.detailData[index];
+    console.log("self.data.detailData[index].coverTitle",)
+    return {
+      title: shareData.coverTitle + "【欢迎转发】",
+      path: `/pages-cat/cat-strategy-detail/cat-strategy-detail?id=${this.data.pageId}`,
+      imageUrl: shareData.coverImg
+    }
   }
 })

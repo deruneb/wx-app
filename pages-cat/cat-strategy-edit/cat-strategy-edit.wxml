@@ -1,2 +1,38 @@
 <!--pages-cat/cat-strategy-edit/cat-strategy-edit.wxml-->
-<text>pages-cat/cat-strategy-edit/cat-strategy-edit.wxml</text>
+<view class="edit-box">
+  <view>
+    <text class="font-28 color-black">封面:</text>
+    <image style="width:100rpx;height:100rpx;" src="{{coverImg}}" bindtap="uploadImg" wx:if="{{!!coverImg}}"></image>
+    <view class="upload-img startegy-upload" bindtap="uploadImg" wx:if="{{!coverImg}}">+</view>
+  </view>
+  <view>
+    <text class="font-28 color-black">封面标题:</text>
+    <input class="font-24" type="text" name="coverTitle" bindinput="changeValue" data-type="covertitle" value="{{coverTitle}}" placeholder="请输入标题"></input>
+  </view>
+  <view>
+    <text class="font-28 color-black">封面高度:</text>
+    <input class="font-24" type="text" name="coverHeight" bindinput="changeValue" data-type="coverheight" value="{{coverHeight}}" placeholder="请输入高度(数字)"></input>
+  </view>
+  <view>
+    <text class="font-28 color-black">发布时间:</text>
+    <!-- <input class="font-24" style="width: 400rpx;" type="text" name="coverTime" bindinput="changeValue" data-type="covertime" value="{{coverTime}}" placeholder="请输入创建时间(20xx x-x)"></input> -->
+    <picker mode="date" value='{{currentDate}}' bindchange='changeDate'>
+      <text class="font-24" style="color:#808080;">{{currentDate}}</text>
+    </picker>
+  </view>
+  <view>
+    <text class="font-28 color-black">详情文字:</text>
+    <textarea class="text-area font-24" bindinput="changeValue" data-type="detail" style="width:512rpx;font-size: 26rpx;color:#3c4a55;border: 1rpx solid #f1f2f3;padding: 10rpx;" value="{{detail}}" placeholder="文字描述..." placeholder-style="color:#B8B9B9;font-size:24rpx;"></textarea>
+    <!-- <input type="text" name="coverHeight" bindinput="changeValue" data-type="coverheight" value="{{coverHeight}}" placeholder="请输入高度(数字)"></input> -->
+  </view>
+  <view>
+    <text class="font-28 color-black">详情图片:</text>
+    <view class="flex flex-wrap" style="width:564rpx;">  
+      <block wx:if="{{!!detailImg || detailImg.length > 0}}">
+        <image style="width:100rpx;height:100rpx;margin:10rpx 6rpx 0 0;" wx:for="{{detailImg}}" wx:key="index" src="{{item}}"></image>
+      </block>
+      <view class="upload-img startegy-upload" bindtap="uploadMoreImg">+</view>
+    </view>
+  </view>
+  <view class="submit-btn" bindtap="saveStrategy">giao~</view>
+</view>
