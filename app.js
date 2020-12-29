@@ -1,5 +1,12 @@
+// {
+//   "pagePath": "pages/index/index",
+//   "text": "功能集合",
+//   "iconPath": "/images/icon-space.png",
+//   "selectedIconPath": "/images/icon-space-select.png"
+// },
 //app.js
-const PubSub = require('./utils/pubsub.js');
+const PubSub = require('./utils/pubsub.js'),
+  router = require('./router/router.js');
 
 // 事件模块支持
 Object.defineProperties(wx, {
@@ -54,5 +61,6 @@ App({
   globalData: {
     userInfo: null,
     soketObj: {}
-  }
+  },
+  router:router
 })

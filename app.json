@@ -48,17 +48,12 @@
         "selectedIconPath": "/images/icon-index-select.png"
       },
       {
-        "pagePath": "pages/index/index",
-        "text": "功能集合",
-        "iconPath": "/images/icon-space.png",
-        "selectedIconPath": "/images/icon-space-select.png"
-      },
-      {
         "pagePath": "pages/user/user",
         "text": "个人中心",
         "iconPath": "/images/icon-user.png",
         "selectedIconPath": "/images/icon-user-select.png"
       }
+      
     ]
   },
   "subpackages": [

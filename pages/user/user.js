@@ -9,7 +9,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    introduce: ''
+    introduce: '',
+    openId: ''
   },
   //事件处理函数
   bindViewTap: function() {
@@ -54,6 +55,7 @@ Page({
   },
   getUserInfo: function(e) {
     console.log(e)
+    let self = this;
     getApp().globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -81,6 +83,10 @@ Page({
               },
               success:function(response){
                 console.log(response.data)
+                //ogMRd5TG5h0rkMdhdAm6-x2Ek8II
+                self.setData({
+                  openId: response.data.openid
+                })
                 wx.setStorageSync('app_openid', response.data.openid); 
                 wx.setStorageSync('sessionKey', response.data.session_key)//将session_key 存入本地缓存命名为SessionKey
               }
@@ -129,6 +135,8 @@ Page({
   //提交
   addModule: function (){
     let self = this;
+    console.log('appp',app)
+    app.router.push('index',{openType: 'switchTab'})
     db.collection('Leave-message').add({
       data:{
         message: self.data.introduce
@@ -149,6 +157,12 @@ Page({
         duration: 1500
       })
       // handle error
+    })
+  },
+  //功能集合跳转
+  jumpCollection: function (){
+    wx.navigateTo({
+      url: '/pages/index/index',
     })
   }
 })

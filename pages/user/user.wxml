@@ -20,6 +20,7 @@
       </view>
     </view>
     <view bindtap="addModule" class="add-module"> 提交 </view>
+    <view bindtap="jumpCollection" class="add-module" style="margin-top:20rpx;" wx:if="{{introduce == '功能集合'}}">功能集合</view>
   </view>
   <text class="tips">联系QQ: 953727948 DR: wy</text>
 </view>
