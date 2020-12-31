@@ -108,6 +108,18 @@ page {
   box-shadow:0px 0px 10px #bbbec4 inset; 
 }
 
+.btn-defult{
+  width: 730rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #3c4a55;
+  font-size: 28rpx;
+  border: 1rpx solid #f1f2fc;
+  margin: 20rpx auto;
+  border-radius: 10rpx; 
+}
+
 .tips{
   width: 750rpx;
   font-size: 12rpx;

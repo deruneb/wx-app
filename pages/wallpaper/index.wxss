@@ -1,0 +1,37 @@
+/* pages/wallpaper/index.wxss */
+.navtab view{
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 25rpx;
+  color: #333;
+  position: relative;
+}
+.border-line{
+  width: 63rpx;
+  height: 5rpx;
+  background-color: #27D1C7;
+  position: absolute;
+  bottom: 15rpx;
+  left: 94rpx;
+}
+.girlImg{
+  width: 100%;
+}
+.keywords{
+  width: 583rpx;
+  border: 1rpx solid #F6F7FB;
+  margin: 0 auto 12rpx;
+  border-left: none;
+  border-right: none;
+  font-size: 17rpx;
+  text-align: center;
+}
+.search-text{
+  font-size: 20rpx;
+  color: #323233;
+  position: absolute;
+  right: 20rpx;
+  top: 8rpx;
+}

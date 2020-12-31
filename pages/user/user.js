@@ -164,5 +164,11 @@ Page({
     wx.navigateTo({
       url: '/pages/index/index',
     })
+  },
+  //壁纸跳转
+  jumpWallpaper: function (){
+    wx.navigateTo({
+      url: '/pages/wallpaper/index',
+    })
   }
 })

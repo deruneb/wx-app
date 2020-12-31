@@ -1,0 +1,18 @@
+<!--pages/wallpaper/index.wxml-->
+<view>
+  <view class="navtab flex">
+    <view bindtap="swithFn" data-type="scenery">风景 <text class="border-line" wx:if="{{currentType == 'scenery'}}"></text> </view>
+    <view bindtap="swithFn" data-type="girl">好图 <text class="border-line" wx:if="{{currentType == 'girl'}}"></text> </view>
+    <view bindtap="swithFn" data-type="search">自搜 <text class="border-line" wx:if="{{currentType == 'search'}}"></text> </view>
+  </view>
+  <view style="position:relative;" wx:if="{{currentType == 'search'}}">  
+    <input class="keywords" type="text" placeholder="输入关键词" bindinput='getKeyword' bindconfirm="confirmFn" value="{{keyword}}" /> 
+    <text class="search-text" bindtap="searchFn">GO</text>
+  </view>
+  <view>
+    <image wx:if="{{imgUrl}}" class="girlImg" bindtap="previewImage" src="{{imgUrl}}" mode="widthFix"></image>
+    <!-- <image class="girlImg" bindtap="previewImage" src="https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/541aa0c9-9dc8-4156-912e-7b2b6f128dd6.png"></image> -->
+  </view>
+  <view wx:if="{{imgUrl}}" hover-class="btn-hover" class="btn-defult" bindtap="replaceFn" data-type="{{currentType}}">更换</view>
+</view>
+
