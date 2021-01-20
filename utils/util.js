@@ -1,4 +1,5 @@
 var db = wx.cloud.database();
+const config = require('../config.js');
 
 const formatTime = date => {
   const year = date.getFullYear()
@@ -221,6 +222,69 @@ const getStrategyList = function (cb){
   })
 }
 
+//获取token
+const getAccessToken = function() {
+  return new Promise((resolve,reject)=>{
+    wx.request({
+      url: `https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=${config.client_id}&client_secret=${config.client_secret}`,
+      success: function(res){
+        resolve(res.data)
+      }
+    });
+  })
+}
+
+//获取查询信息
+const picturesFn = function(obj) {
+  return new Promise((resolve,reject)=>{
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album','camera'],
+      success (res) {
+        const tempFilePaths = res.tempFilePaths;
+        wx.showLoading({
+          title: '查询中...',
+        })
+        wx.getImageInfo({
+          src: tempFilePaths[0],
+          success (res) {
+            wx.getFileSystemManager().readFile({
+              filePath: res.path, //选择图片返回的相对路径
+              encoding: 'base64', //编码格式
+              success: res => { //成功的回调
+                let imgUrl = res.data;
+                obj = Object.assign({image: imgUrl},obj)
+                // var imgs = imgUrl.replace(/^data:image\/\w+;base64,/, "");
+                wx.request({
+                  url: obj.url,
+                  method: 'POST',
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded' 
+                  },
+                  data: obj,
+                  complete: function (){
+                    wx.hideLoading();
+                  },
+                  success: function (res){
+                    res = Object.assign({tempFilePaths: tempFilePaths},res)
+                    resolve(res);
+                  },
+                  fail: function(err) {
+                    reject(err)
+                  }
+                })
+              }
+            })
+          }
+        })
+      }
+    })
+  })
+  
+}
+
+
 module.exports = {
   formatTime,
   getDateDiff,
@@ -228,5 +292,7 @@ module.exports = {
   getResource,
   getFileId,
   getMoreFileId,
-  getStrategyList
+  getStrategyList,
+  getAccessToken,
+  picturesFn
 }

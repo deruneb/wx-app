@@ -9,6 +9,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     msgList: [
+      { url: "url", title: "公告：新增植物,果蔬识别功能！" },
       { url: "url", title: "公告：新增image-cropper自由裁剪图片！" },
       { url: "url", title: "公告：新增we-cropper + canvas实现生成海报！" },
       { url: "url", title: "公告：新增验证方式集合！" },
@@ -16,6 +17,24 @@ Page({
       { url: "url", title: "公告：新增地址管理DOM效果！" },
       { url: "url", title: "公告：新增模拟websoket实现即时通讯！" },
       { url: "url", title: "公告：需要源码请看个人中心意见反馈！"}
+    ],
+    menuListL: [
+      {type: '1',title: '基于base64创建二维码'},
+      {type: '2',title: '内容/图文收缩展开'},
+      {type: '3',title: '头像上传裁剪保存'},
+      {type: '4',title: '横向滑动菜单带固定滚动条'},
+      {type: '5',title: '完整录音重录播放保存'},
+      {type: '6',title: '多图上传(宽固定高度自适应)'},
+      {type: '7',title: 'canvas绘图(圆形头像+字体绝对居中+超出打点)'},
+      {type: '8',title: '复制文字保存图片(拒绝授权后重新授权)'},
+      {type: '9',title: 'parse富文本插件编译示例'},
+      {type: '10',title: '地址管理(地图定点)'},
+      {type: '11',title: '即时通讯(websoket)'},
+      {type: '12',title: '验证集合'},
+      {type: '13',title: 'we-cropper + canvas实现生成海报（适配各种机型）'},
+      {type: '14',title: 'image-cropper自由裁剪图片'},
+      {type: '15',title: '植物识别'},
+      {type: '16',title: '果蔬识别'},
     ]
     
   },
@@ -26,6 +45,7 @@ Page({
   },
   //功能跳转
   jumpPage: function (e){
+    console.log("eeeee*---",e)
     let self = this;
     let type = e.currentTarget.dataset.type;
     switch (type) {
@@ -116,6 +136,16 @@ Page({
       case '14': //we-cropper + canvas实现生成海报
         wx.navigateTo({
           url: '/pages/image-cropper-demo/image-cropper-demo',
+        })
+        break;
+      case '15': //植物识别
+        wx.navigateTo({
+          url: '/pages/photo-identify/plant-identification/index',
+        })
+        break;
+      case '16': //果蔬识别
+        wx.navigateTo({
+          url: '/pages/photo-identify/vegetables/index',
         })
         break;
     }

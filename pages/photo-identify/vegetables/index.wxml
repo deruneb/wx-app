@@ -1,0 +1,16 @@
+<view class="plant-box">
+  <view class="updata-btn" hover-class="updata-btn-hover" bindtap="picturesFn">果蔬识别</view>
+  <view class="plant-add-img" style="border: {{!updataImg?'1rpx solid #C0C0C0':'none'}};">
+    <image wx:if="{{!updataImg}}" class="placeholder-img" src="../../../images/icon-add.png"></image>
+    <image wx:if="{{updataImg}}" class="plant-img" src="{{updataImg}}" mode="aspectFit"></image>
+  </view>
+  <view style="padding: 20rpx;">
+    <view class="color-gray font-22" wx:if="{{tipsFlag}}">查询结果{{resultsList.length || '0'}}条 (排名靠前的准确率越高 source:百度)</view>
+    <view class="color-black" wx:for="{{resultsList}}" wx:key="index" style="margin-top:20rpx;">
+      <view>{{index + 1}}.{{item.name}}</view>
+      <view wx:if="{{item.baike_info}}" class="description">
+        {{item.baike_info.description}}
+      </view>
+    </view>
+  </view>
+</view>

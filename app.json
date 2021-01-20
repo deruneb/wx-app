@@ -20,7 +20,10 @@
     "pages/real-time-websocket/real-time-websocket",
     "pages/cropper-poster/cropper-poster",
     "pages/image-cropper-demo/image-cropper-demo",
-    "pages/wallpaper/index"
+    "pages/wallpaper/index",
+    "pages/photo-identify/plant-identification/index",
+    "pages/photo-identify/animal/index",
+    "pages/photo-identify/vegetables/index"
   ],
   "usingComponents": {
     "charts-task-pie": "./components/echarts/task-pie/task-pie",
@@ -47,6 +50,12 @@
         "text": "喵星",
         "iconPath": "/images/icon-index.png",
         "selectedIconPath": "/images/icon-index-select.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "功能集合",
+        "iconPath": "/images/icon-space.png",
+        "selectedIconPath": "/images/icon-space-select.png"
       },
       {
         "pagePath": "pages/user/user",

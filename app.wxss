@@ -194,3 +194,47 @@ page {
   border-radius: 10rpx;
   margin: 250rpx auto 0;
 }
+
+/* 识别 */
+/* pages/plant-identification/index.wxss */
+.description{
+  font-size: 18rpx;
+  color: #7D7E80;
+  text-indent: 22rpx;
+}
+.plant-add-img{
+  width: 600rpx;
+  height: 300rpx;
+  text-align: center;
+  margin: 20rpx auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.plant-add-img .placeholder-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.plant-add-img .plant-img{
+  width: 600rpx;
+  height: 300rpx;
+}
+.updata-btn{
+  width: 600rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #8BC34A;
+  border: 1rpx solid #8BC34A;
+  border-radius: 30rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.updata-btn-hover{
+  border: 1rpx solid #9aeb3f;
+}

@@ -22,12 +22,17 @@ Page({
         title: '科学养宠攻略',
         img: 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/6e238a80-5232-4015-99b3-154703be81e9.png'
       },
+      {
+        title: '动物识别',
+        img: '../../images/animal-1.jpg'
+      },
     ],
     url:[
       '/pages-cat/cat-home/cat-home',
       '/pages-cat/cat-circle/cat-circle',
       '/pages-cat/cat-manual/cat-manual',
-      '/pages-cat/cat-strategy/cat-strategy'
+      '/pages-cat/cat-strategy/cat-strategy',
+      '/pages/photo-identify/animal/index'
     ]
   },
 

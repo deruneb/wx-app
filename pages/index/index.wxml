@@ -14,21 +14,10 @@
   </view>
   <!-- 集合 -->
   <view class="container">
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="1">基于base64创建二维码</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="2">内容/图文收缩展开</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="3">头像上传裁剪保存</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="4">横向滑动菜单带固定滚动条</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="5">完整录音重录播放保存</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="6">多图上传(宽固定高度自适应)</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="7">canvas绘图(圆形头像+字体绝对居中+超出打点)</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="8">复制文字保存图片(拒绝授权后重新授权)</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="9">parse富文本插件编译示例</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="10">地址管理(地图定点)</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="11">即时通讯(websoket)</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="12">验证集合</view>
-    <view hover-class="btn-hover" bindtap="jumpPage" data-type="13">we-cropper + canvas实现生成海报（适配各种机型）</view>
-      <view hover-class="btn-hover" bindtap="jumpPage" data-type="14">image-cropper自由裁剪图片</view>
-    <view> (所有功能都不包含接口)持续更新中... </view>
+    <block wx:for="{{menuListL}}" wx:key="index">
+      <view hover-class="btn-hover" bindtap="jumpPage" data-type="{{item.type}}">{{item.title}}</view>
+    </block>
+    <view> (所有功能仅限参考使用)持续更新中... </view>
   </view>
 </view>
 
