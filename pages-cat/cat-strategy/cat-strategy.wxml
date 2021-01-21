@@ -8,7 +8,7 @@
         <view class="title-text flex flex-column">
           <text class="line-clamp2">{{item.coverTitle}}</text>
           <view class="font-22 color-gray flex justify-content-between">
-            <view class="flex">
+            <view class="flex align-items-center">
               <image style="width:50rpx;height:50rpx;border-radius: 50rpx;margin-right: 10rpx;" src="{{item.userPhoto || 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/45a1703d-ea27-48d1-8c3e-d09614bc31ad.jpg'}}"></image>
               <text>{{item.userName || '未授权的热心网友'}}</text>
             </view>
@@ -26,7 +26,7 @@
         <view class="title-text flex flex-column">
           <text class="line-clamp2">{{item.coverTitle}}</text>
           <view class="font-22 color-gray flex justify-content-between">
-            <view class="flex">
+            <view class="flex align-items-center">
               <image style="width:50rpx;height:50rpx;border-radius: 50rpx;margin-right: 10rpx;" src="{{item.userPhoto || 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/45a1703d-ea27-48d1-8c3e-d09614bc31ad.jpg'}}"></image>
               <text>{{item.userName || '未授权的热心网友'}}</text>
             </view>

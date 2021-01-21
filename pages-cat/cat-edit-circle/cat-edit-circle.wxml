@@ -8,7 +8,7 @@
   </view>
   <!-- 输入框 -->
   <view>
-    <textarea class="text-area" bindinput="inputChange" style="width:700rpx;font-size: 26rpx;color:#3c4a55;" value="{{textValue}}" placeholder="这一喵的喵法..." placeholder-style="color:#B8B9B9;font-size:26rpx;"></textarea>
+    <textarea class="text-area" bindinput="inputChange" style="width:700rpx;font-size: 26rpx;color:#3c4a55;" value="{{textValue}}" placeholder="记录美好生活..." placeholder-style="color:#B8B9B9;font-size:26rpx;"></textarea>
   </view>
   <!-- 图片 -->
   <view class="img-box flex">

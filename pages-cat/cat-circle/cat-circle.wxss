@@ -1,8 +1,18 @@
 .hert-img{
-  width: 50rpx;
-  height: 50rpx;
+  width: 30rpx;
+  height: 30rpx;
   margin-right: 6rpx;
   border-radius: 6rpx;
+}
+
+.icon-praise{
+  width: 40rpx;
+  height: 38rpx;
+}
+
+.icon-message{
+  width: 42rpx;
+  height: 42rpx;
 }
 
 .circle-box{
@@ -26,9 +36,14 @@
 .create-circle{
   width: 53rpx;
   height:51rpx;
-  position: absolute;
-  right: 18rpx;
-  top: 20rpx;
+  position: fixed;
+  right: 28rpx;
+  bottom: 50rpx;
+}
+
+.create-circle image{
+  width: 53rpx;
+  height:51rpx;
 }
 
 .user-photo{
@@ -43,21 +58,27 @@
 }
 
 .circle-cont{
-  padding: 25rpx 15rpx;
-  border-bottom: 1rpx solid #f7f7ff;
+  padding: 25rpx 35rpx;
+  border-bottom: 20rpx solid #f7f7ff;
 }
 
 .circle-cont > view:nth-of-type(2){
-  width: 650rpx;
+  /* width: 650rpx; */
+}
+
+.circle-cont .item-user{
+  font-size: 17rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .circle-cont .item-user-photo{
   width: 80rpx;
   height: 80rpx;
-  border-radius: 10rpx;
+  border-radius: 80rpx;
   margin-right: 20rpx;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .circle-cont .item-user-name{
@@ -70,6 +91,7 @@
 .circle-cont .item-text{
   line-height: 36rpx;
   margin-bottom: 20rpx;
+  padding: 20rpx;
 }
 
 .circle-cont .item-img{
@@ -85,7 +107,7 @@
 .circle-cont .comments{
   /* background-color: #F7F7F7; */
   margin-top: 12rpx;
-  
+  padding: 0 10rpx;
 }
 .circle-cont .comments-bg{
   /* background-color: #F7F7F7; */
@@ -133,4 +155,14 @@
   height: 180rpx;
   width: 100%;
 
+}
+
+.swiper-box{
+  height: 330rpx;
+  margin: 30rpx 0;
+}
+
+.switch-img{
+  width: 100%;
+  height: 330rpx;
 }

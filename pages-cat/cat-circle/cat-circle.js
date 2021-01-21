@@ -46,11 +46,12 @@ Page({
       userInfo: getApp().globalData.userInfo,
       openid: wx.getStorageSync('app_openid')
     })
+    console.log("openidopenidopenid",this.data.openid)
     if(!getApp().globalData.userInfo){
       this.setData({authorizationFlag: true});
       wx.showModal({
         title: '提示',
-        content: '喵星圈需要您的微信授权才能使用哦 >_<',
+        content: '喵星日记需要您的微信授权才能使用哦 >_<',
         success (res) {
           if (res.confirm) {
             console.log('用户点击确定')
@@ -286,6 +287,9 @@ Page({
 
   //提交评论
   submitComment: function (){
+    if(!this.data.commentext || this.data.commentext == ''){
+      return
+    }
     db.collection('comment').add({
       data:{
         currentUserId: this.data.currentUserId, //被评论用户UserId
