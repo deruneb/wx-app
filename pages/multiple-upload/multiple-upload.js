@@ -25,6 +25,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      openid: wx.getStorageSync('app_openid')
+    })
     if(wx.getStorageSync('multiple')){
       var ceshi = wx.getStorageSync('multiple');
       this.setData({

@@ -1,5 +1,6 @@
 <!--pages/multiple-upload/multiple-upload.wxml-->
 <view>
+  <view style="text-align:center;font-size:18rpx;padding:10rpx;">demo演示不保存数据,只存在临时缓存中（如有影响，删除小程序或清除缓存后数据会自动清理）</view>
 	<view class="company-out-box">
     <view wx:for="{{enterpriseInfo}}" wx:for-index="index" wx:key="index" class="com-li-box">
       <view class="com-li-top">
