@@ -1,0 +1,7 @@
+<!--pages/photo-album/photo-album-upload/index.wxml-->
+<view class="container">
+  <view hover-class="btn-hover" bindtap="upload">上传</view>
+  <view hover-class="btn-hover" bindtap="savePhoto">保存至相册</view>
+</view>
+<view class="tips-title">{{tipsTitle}}</view>
+

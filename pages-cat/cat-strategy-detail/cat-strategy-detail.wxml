@@ -14,3 +14,6 @@
     </view>
   </block>
 </view>
+<view class="loading-bg" wx:if="{{loadingFlag}}">
+  <image src="https://resource.tuixb.cn/release/00000000-0000-0000-0000-000000000000/KMA/default/d1777ff5-b89a-4446-95fd-379fe76d2321.gif"></image>
+</view>

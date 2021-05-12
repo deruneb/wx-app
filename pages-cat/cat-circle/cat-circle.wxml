@@ -72,7 +72,7 @@
     </view>
     <view wx:if="{{miaoInfoList.length == 0 || !miaoInfoList}}" class="font-22" style="text-align:center;"> -暂无内容- </view>
   </view>
-  <view class="create-circle" wx:if="{{openid == 'ogMRd5TG5h0rkMdhdAm6-x2Ek8II'}}">
+  <view class="create-circle" wx:if="{{!!circleRule}}">
     <image bindtap="jumpEdit" src="../../images/icon-circle-edit.png"></image>
   </view>
 </block>

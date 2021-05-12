@@ -15,6 +15,7 @@ Page({
     detailImg: [], //详情图片
     currentDate: '请选择', //当前时间
     listLength: null, //已有数据长度
+    strateRule: ''
   },
 
   /**
@@ -32,6 +33,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      strateRule: wx.getStorageSync('strate-rule') || false
+    })
     // this.setData({coverImg: ''})
   },
 

@@ -8,7 +8,7 @@ Page({
     areas1:[
       {
         title: '喵星百科',
-        img: 'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/f5279d1e-25e6-4bfd-8793-045f8adbccc3.jpg'
+        img: 'https://resource.tuixb.cn/release/00000000-0000-0000-0000-000000000000/KMA/default/e1d7c968-0daa-453d-bb2f-f4e8e590415e.jpg'
       },
       {
         title: '喵星日记',
@@ -25,15 +25,16 @@ Page({
       {
         title: '动物识别',
         img: '../../images/animal-1.jpg'
-      },
+      }
     ],
     url:[
       '/pages-cat/cat-home/cat-home',
       '/pages-cat/cat-circle/cat-circle',
       '/pages-cat/cat-manual/cat-manual',
       '/pages-cat/cat-strategy/cat-strategy',
-      '/pages/photo-identify/animal/index'
-    ]
+      '/pages/photo-identify/animal/index',
+    ],
+    state: false, //控制相册显示中间状态
   },
 
   /**
@@ -54,7 +55,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let list = this.data.areas1,urlList = this.data.url;
+    if(wx.getStorageSync('photo-rule') && !this.data.state){
+      list.push({
+        title: '土豆애인',
+        img: '../../images/cat-6.jpg'
+      })
+      urlList.push('/pages/photo-album/photo-album')
+      this.setData({
+        state: true
+      })
+    }else if(!wx.getStorageSync('photo-rule') && (list.length == 6 || urlList.length == 6)){
+      list.pop(); 
+      urlList.pop();
+      this.setData({
+        state: false
+      })
+    }
+    this.setData({
+      areas1: list,
+      url: urlList
+    })
   },
 
   /**

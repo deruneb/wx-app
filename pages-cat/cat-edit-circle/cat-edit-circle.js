@@ -11,6 +11,7 @@ Page({
     imageList: [], //选中图片回显
     idList: [],
     copyText: '', //朋友圈文案
+    circleRule: ''
   },
 
   /**
@@ -32,6 +33,9 @@ Page({
    */
   onShow: function () {
     // self.getUploadImg()
+    this.setData({
+      circleRule: wx.getStorageSync('circle-rule') || false
+    })
   },
 
   inputChange: function(e){

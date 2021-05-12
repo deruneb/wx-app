@@ -11,7 +11,9 @@ Page({
     rightList: [],
     leftHight: 0,
     rightHight: 0,
-    addImgRight: -104
+    addImgRight: -104,
+    strateRule: '',
+    loadingFlag: true
   },
     //以本地数据为例，实际开发中数据整理以及加载更多等实现逻辑可根据实际需求进行实现   
   onLoad: function(options) {
@@ -22,7 +24,9 @@ Page({
     this.setData({
       leftHight: 0,
       rightHight: 0,
+      strateRule: wx.getStorageSync('strate-rule') || ''
     })
+    console.log("攻状态",this.data.strateRule)
     this.initData();
   },
 
@@ -69,6 +73,7 @@ Page({
   
     //更新左右两栏的数据以及累计高度
     that.setData({
+      loadingFlag: false,
       leftHight: leftH,
       rightHight: rightH,
       leftList: leftData,

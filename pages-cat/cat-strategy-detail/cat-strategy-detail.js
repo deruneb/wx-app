@@ -9,6 +9,7 @@ Page({
     pageId: '', //跳转页id
     detailData: [], //详情数据
     optionsData: {},
+    loadingFlag: true
   },
 
   /**
@@ -24,17 +25,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.showLoading({
-      title: '加载中...',
-    })
     let self = this;
     //获取数据
     utils.getStrategyList((data)=>{
-      wx.hideLoading();
       self.setData({
         pageId: self.data.optionsData.id,
         detailData: data
       })
+      setTimeout(()=>{
+        self.setData({loadingFlag: false})
+      },1000)
       wx.setNavigationBarTitle({
         title: self.data.detailData[self.data.pageId].coverTitle,
       })

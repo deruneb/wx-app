@@ -1,51 +1,5 @@
 {
-  "description": "项目配置文件",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": true,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "bundle": false,
-    "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useApiHostProcess": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.10.4",
-  "appid": "wx96d9a606d24aef3b",
-  "projectname": "%E5%B0%8F%E6%9C%AC%E6%9C%AC",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "isGameTourist": false,
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -139,6 +93,18 @@
         {
           "name": "pages-cat/cat-circle/cat-circle",
           "pathName": "pages-cat/cat-circle/cat-circle",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/photo-album/photo-album",
+          "pathName": "pages/photo-album/photo-album",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/photo-album/photo-album-upload/index",
+          "pathName": "pages/photo-album/photo-album-upload/index",
           "scene": null
         }
       ]

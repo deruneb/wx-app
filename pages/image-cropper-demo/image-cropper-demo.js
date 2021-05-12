@@ -4,8 +4,8 @@ Page({
     src:'https://resource.tuixb.cn/beta/00000000-0000-0000-0000-000000000000/KMA/default/d6ec5d6f-af32-4b13-8dfe-5297030208b1.png',
     width: 250,//宽度
     height: 300,//高度
-    max_width: 400,
-    max_height: 400,
+    max_width: 1000,
+    max_height: 1600,
     disable_rotate:true,//是否禁用旋转
     disable_ratio: false,//锁定比例
     limit_move: true,//是否限制移动

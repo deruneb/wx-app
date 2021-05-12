@@ -10,7 +10,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     introduce: '',
-    openId: ''
+    openId: '',
+    circleRule: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -170,5 +171,12 @@ Page({
     wx.navigateTo({
       url: '/pages/wallpaper/index',
     })
+  },
+  //日记权限
+  circleFn(){
+    this.setData({
+      circleRule: !this.data.circleRule
+    })
+    wx.setStorageSync('circle-rule', this.data.circleRule); 
   }
 })

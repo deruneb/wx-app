@@ -226,8 +226,8 @@ page {
   line-height: 100rpx;
   text-align: center;
   font-size: 22rpx;
-  color: #8BC34A;
-  border: 1rpx solid #8BC34A;
+  color: #395072;
+  border: 1rpx solid #395072;
   border-radius: 30rpx;
   position: fixed;
   bottom: 30rpx;
@@ -236,5 +236,47 @@ page {
   margin: auto;
 }
 .updata-btn-hover{
-  border: 1rpx solid #9aeb3f;
+  border: 1rpx solid #395072;
+}
+
+/* 点击弹出 */
+.add-img{
+  position: fixed;
+  bottom: 150rpx;
+  transition: right .7s;
+  width: 62rpx;
+  background-color: #fff;
+  border: 1rpx solid #7D95C1;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+
+  display: flex;
+  padding: 10rpx 40rpx;
+  
+}
+
+/* loading */
+.loading-bg{
+  width: 750rpx!important;
+  height: 100vh!important;
+  background-color: #66CEFF;
+  position: relative;
+  z-index: 99999;
+  /* margin: auto; */
+  /* position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+}
+
+.loading-bg,.loading-bg image{
+  width: 400rpx;
+  height: 200rpx;
+  margin: auto; 
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

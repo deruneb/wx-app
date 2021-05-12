@@ -23,7 +23,9 @@
     "pages/wallpaper/index",
     "pages/photo-identify/plant-identification/index",
     "pages/photo-identify/animal/index",
-    "pages/photo-identify/vegetables/index"
+    "pages/photo-identify/vegetables/index",
+    "pages/photo-album/photo-album",
+    "pages/photo-album/photo-album-upload/index"
   ],
   "usingComponents": {
     "charts-task-pie": "./components/echarts/task-pie/task-pie",

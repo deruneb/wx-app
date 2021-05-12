@@ -211,13 +211,62 @@ const getMoreFileId = function(cb){
   })
 }
 
+//获取上传相册fileid
+const getPhotoAlbumFileId = function(cb){
+  var idList = [];
+  wx.chooseImage({
+    count: 9,
+    success: function(res) {
+      console.log(res);//用于查看结果
+      var image = res.tempFilePaths;
+      
+      wx.showToast({
+        icon:'none',
+        title: '上传图片中',
+      });
+  
+      for(let i = 0 ; i < image.length ; i++){
+        wx.cloud.uploadFile({
+          cloudPath: 'photo-album/' + (new Date()).getTime()+Math.floor(9*Math.random())+".jpg", // 上传至云端的路径
+          filePath: res.tempFilePaths[i], // 小程序临时文件路径
+          success: res => {
+            idList.push(res.fileID);
+            !!cb && cb(idList)
+            wx.showToast({
+              icon:'none',
+              title: '上传成功',
+            })
+          },
+          fail:function(){
+            wx.showToast({
+              icon:'none',
+              title: '上传失败，请重试',
+            })
+          },
+        })
+      }
+     
+    }
+  })
+}
+
 //获取攻略数据
 const getStrategyList = function (cb){
-  db.collection('strategy-list').orderBy('id','desc').get({
+  db.collection('strategy-list').orderBy('timestamp','desc').get({
     success: res=>{
       let data = res.data;
       !!cb && cb(data);
       console.log("数据列表",res)
+    }
+  })
+}
+
+//获取相册数据
+const getPhotoAlbumList = function (cb){
+  db.collection('photo-album').orderBy('timestamp','desc').get({
+    success: res=>{
+      let data = res.data;
+      !!cb && cb(data);
     }
   })
 }
@@ -294,5 +343,7 @@ module.exports = {
   getMoreFileId,
   getStrategyList,
   getAccessToken,
-  picturesFn
+  picturesFn,
+  getPhotoAlbumFileId,
+  getPhotoAlbumList
 }

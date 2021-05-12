@@ -1,0 +1,23 @@
+<!--pages/photo-album/photo-album.wxml-->
+<view>
+  <view class='container-box' style="height:{{sizeFlag?'1000rpx':'none'}};">
+      <view class='page_first'> <text style="display: inline-block;width: 60rpx;margin: 0 auto;" wx:if="{{imgArr.length > 0}}">相册 点击图片翻页查看</text> </view>
+      <view class='page_last' style="position:{{sizeFlag?'relative':'none'}}">
+          <block wx:for='{{imgArr}}' wx:key='index'>
+              <view class="photo_item {{item.isturn?'left':'right'}}" hidden="{{photoFlag}}" style="z-index:{{item.zIndex}}" data-index='{{index}}' data-img="{{item.src}}" data-time="{{lastTapTime}}" bindtap='change' bindtransitionend='finish'>
+                  <image src='{{item.src}}' mode='aspectFill'></image>
+              </view>
+          </block>
+          <view class='page_first' style="width: 90rpx;margin: 0 auto;" wx:if="{{imgArr.length > 0 && endFlag}}">最后一页啦</view>
+          <view class='page_first' style="width: 90rpx;margin: 0 auto;" wx:if="{{imgArr.length==0}}">暂无照片</view>
+      </view>
+  </view>
+  <view class="add-img" bindtap="jumpPop" style="width:300rpx;right:{{addImgRight}}rpx;z-index: 9999;">
+    <text bindtap="operationFn" data-type="big">全屏 </text>
+    <text bindtap="operationFn" data-type="standard" style="margin: 0 15rpx;">标准 </text>
+    <text bindtap="operationFn" data-type="upload">上传</text>
+  </view>
+</view>
+<view class="loading-bg" wx:if="{{photoFlag}}">
+  <image src="https://resource.tuixb.cn/release/00000000-0000-0000-0000-000000000000/KMA/default/d1777ff5-b89a-4446-95fd-379fe76d2321.gif"></image>
+</view>

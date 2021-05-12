@@ -2,7 +2,7 @@
 .areaw-outwrap{
   width: 100%;
   padding: 16rpx 0;
-  background: #fff;
+  background: #F2ECE7;
   margin-bottom: 8rpx;
 }
 .areaw-outwrap .areawrap-innerwrap{
@@ -10,10 +10,13 @@
   flex-direction: column;
 }
 .areaw-outwrap .areawrap-innerwrap .area{
+  width: 690rpx;
   height: 335rpx;
-  margin:8rpx;
+  margin: 8rpx auto 10rpx;
   overflow: hidden;
   position: relative;
+  border-radius: 30rpx;
+  box-shadow: 0 20rpx 40rpx rgba(0, 0, 0, 0.06);
 }
 
 .areaw-outwrap .areawrap-innerwrap .area .textwrap{

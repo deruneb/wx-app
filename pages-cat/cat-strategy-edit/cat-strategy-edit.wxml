@@ -1,5 +1,5 @@
 <!--pages-cat/cat-strategy-edit/cat-strategy-edit.wxml-->
-<view class="edit-box">
+<view class="edit-box" wx:if="{{!!strateRule}}">
   <view class="item-edit">
     <text class="font-28 color-black">封面:</text>
     <image style="width:100rpx;height:100rpx;" src="{{coverImg}}" bindtap="uploadImg" wx:if="{{!!coverImg}}"></image>
@@ -36,3 +36,4 @@
   </view>
   <view class="submit-btn" bindtap="saveStrategy">giao~</view>
 </view>
+<view wx:if="{{!strateRule}}" style="text-align:center;font-size:28rpx;padding:10rpx;">暂无权限</view>

@@ -1,5 +1,5 @@
 <!--pages-cat/cat-edit-circle/cat-edit-circle.wxml-->
-<view>
+<view wx:if="{{!!circleRule}}">
   <view class="flex justify-content-between align-items-center" style="margin-bottom:50rpx;padding: 0 20rpx;">
     <view>
       <image class="returnBtn" bindtap="returnBtn" src="../../images/fanhui.png"></image>
@@ -19,3 +19,4 @@
     <!-- <uploadImages bindmyevent="myEventListener" count='{{countPic}}' showUrl="{{showImgUrl}}" uploadUrl="{{uploadImgUrl}}"></uploadImages> -->
   </view>
 </view>
+<view wx:if="{{!circleRule}}" style="text-align:center;font-size:28rpx;padding:10rpx;">暂无权限</view>

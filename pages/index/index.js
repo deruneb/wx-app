@@ -5,6 +5,7 @@ const db = wx.cloud.database();
 
 Page({
   data: {
+    openid: '',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),

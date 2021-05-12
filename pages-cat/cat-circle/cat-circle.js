@@ -21,6 +21,7 @@ Page({
     giveLikeList: [], //点赞用户
     middleFlag: false,
     openid: '', //用户标识
+    circleRule: '', //权限
   },
 
   /**
@@ -44,7 +45,8 @@ Page({
     let self = this;
     this.setData({
       userInfo: getApp().globalData.userInfo,
-      openid: wx.getStorageSync('app_openid')
+      openid: wx.getStorageSync('app_openid') ||'',
+      circleRule: wx.getStorageSync('circle-rule') || ''
     })
     console.log("openidopenidopenid",this.data.openid)
     if(!getApp().globalData.userInfo){
