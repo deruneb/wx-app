@@ -20,10 +20,14 @@
       </view>
     </view>
     <view bindtap="addModule" class="add-module"> 提交 </view>
-    <view bindtap="jumpCollection" class="add-module" style="margin-top:20rpx;" wx:if="{{introduce == '功能'}}">功能集合</view>
+    <view bindtap="jumpCollection" class="add-module mt20" wx:if="{{introduce == '功能'}}">功能集合</view>
     <!-- <image src="https://uploadbeta.com/api/pictures/random/?key=%E6%8E%A8%E5%A5%B3%E9%83%8E"></image> -->
-    <view bindtap="jumpWallpaper" class="add-module" style="margin-top:20rpx;" wx:if="{{introduce == '壁纸'}}"> 壁纸 </view>
-    <view bindtap="circleFn" class="add-module" style="margin-top:20rpx;" wx:if="{{introduce == '日记'}}"> {{circleRule?'关闭':'开启'}}日记权限 </view>
+    <view bindtap="jumpWallpaper" class="add-module mt20" wx:if="{{introduce == '壁纸'}}"> 壁纸 </view>
+    <view bindtap="circleFn" class="add-module mt20" wx:if="{{introduce == '日记'}}"> {{circleRule?'关闭':'开启'}}日记编写权限 </view>
+    <view bindtap="strateFn" class="add-module mt20" wx:if="{{introduce == '攻略'}}"> {{strateRule?'关闭':'开启'}}攻略编辑权限 </view>
+    <view bindtap="photoFn" class="add-module mt20" wx:if="{{introduce == '土豆'}}"> {{photoRule?'关闭':'开启'}}相册编辑权限 </view>
+    <view bindtap="welfareFn" class="add-module mt20" data-type="fulao" wx:if="{{introduce == 'fulao2'}}">复制FuLao链接</view>
+    <view bindtap="welfareFn" class="add-module mt20" data-type="aiweier" wx:if="{{introduce == 'aiweier'}}">复制AiWeiEr链接</view>
   </view>
   <text class="tips">联系QQ: 953727948 DR: wy</text>
 </view>

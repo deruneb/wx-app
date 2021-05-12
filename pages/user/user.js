@@ -11,7 +11,9 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     introduce: '',
     openId: '',
-    circleRule: false
+    circleRule: false,
+    strateRule: false,
+    photoRule: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -52,7 +54,11 @@ Page({
     }
   },
   onShow: function(){
-    
+    this.setData({
+      circleRule: wx.getStorageSync('circle-rule') || '',
+      strateRule: wx.getStorageSync('strate-rule') || '',
+      photoRule: wx.getStorageSync('photo-rule') || ''
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -178,5 +184,40 @@ Page({
       circleRule: !this.data.circleRule
     })
     wx.setStorageSync('circle-rule', this.data.circleRule); 
+  },
+  //攻略权限
+  strateFn(){
+    this.setData({
+      strateRule: !this.data.strateRule
+    })
+    wx.setStorageSync('strate-rule', this.data.strateRule);
+  },
+  //相册权限
+  photoFn(){
+    this.setData({
+      photoRule: !this.data.photoRule
+    })
+    wx.setStorageSync('photo-rule', this.data.photoRule);
+  },
+  welfareFn(e){
+    let welfareUrl = '';
+    switch (e.currentTarget.dataset.type) {
+      case 'fulao':
+        welfareUrl = 'https://safe.qdyingqishun.com/?utm_source=share&utm_medium=ios';
+        break;
+      case 'aiweier':
+        welfareUrl = 'https://night18.icu';
+        break;
+    }
+    wx.setClipboardData({
+      data: welfareUrl,
+      success (res) {
+        wx.getClipboardData({
+          success (res) {
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
   }
 })

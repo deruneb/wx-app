@@ -28,6 +28,7 @@
             <!-- <block wx:for="{{item.circleImgs}}" wx:for-item="imgItem" wx:key="item">
               <image class="item-img" bindtap="showImg" data-single="{{imgItem}}" data-list="{{item.circleImgs}}" src="{{imgItem}}" style="width:{{item.circleImgs.length == 1 ? '300rpx':'180rpx'}};height:{{item.circleImgs.length == 1 ? '300rpx':'180rpx'}};"></image>
             </block> -->
+            <view class="item-text font-28 color-black">{{item.copyText}}</view>
             <swiper class="swiper-box" indicator-dots="{{true}}" indicator-color="#EBEDF0" indicator-active-color="#969799" duration="1000" wx:if="{{item.circleImgs.length>0}}">
               <block wx:for="{{item.circleImgs}}" wx:for-item="imgItem" wx:key="item">
                 <swiper-item>
@@ -37,7 +38,6 @@
                 </swiper-item>
               </block>
             </swiper>
-            <view class="item-text font-28 color-black">{{item.copyText}}</view>
 
             <view class="color-gray font-22 flex" style="margin-top: 20rpx; padding: 0 20rpx;text-align:right;justify-content: flex-end;">
                 <image class="icon-praise" bindtap="giveLike" data-userId="{{item._openid}}" data-name="{{item.name}}" data-timeStamp="{{item.timeStamp}}" style="margin-right: 8rpx;" src="../../images/icon-praise-on.png"></image>
